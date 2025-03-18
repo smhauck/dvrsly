@@ -1,5 +1,5 @@
 <%= render @post %>
 
 <div>
-  <%= button_to "Edit this post", edit_post_path(@post) %> <%= button_to "Destroy this post", @post, method: :delete %>
+  <%= link_to "Edit this post", edit_post_path(@post) %> <%= button_to "Destroy this post", @post, method: :delete %>
 </div>
