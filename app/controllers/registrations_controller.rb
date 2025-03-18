@@ -7,12 +7,13 @@ class RegistrationsController < ApplicationController
   end
 
   def create
-    user = User.new(params.permit(:email_address, :password))
+    user = User.new(params.permit(:email_address, :username, :password))
     if user.save
       start_new_session_for user
       redirect_to after_authentication_url, notice: "Successfully Signed Up"
     else
-      redirect_to new_session_path, alert: "Try another email address or password."
+      # redirect_to new_session_path, alert: "Try another email address or password."
+      redirect_to root_path, alert: "Try another email address or password."
     end
   end
 

@@ -24,10 +24,11 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
-    <%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
-    <br>
+    
     <div class="container-fluid">
+    <%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
+    <%= tag.div(flash[:message], style: "color:orange") if flash[:message] %>
+    <%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>
