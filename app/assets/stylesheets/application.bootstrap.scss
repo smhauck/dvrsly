@@ -1,2 +1,8 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+body { font-size: 100%; }
+.post-title { font-size: 2em; }
+.post-body { font-size: 1em; }
+
+footer { margin-top: 50px; }

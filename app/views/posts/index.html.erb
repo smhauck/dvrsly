@@ -1,0 +1,11 @@
+<% content_for :title, "DVRSLY" %>
+<div id="posts">
+  <% @posts.each do |post| %>
+
+
+<div id="<%= dom_id post %>">
+  <p class="post-title"><%= link_to post.title, post %></p>
+  <p class="post-body"><%= post.body %></p>
+</div>
+  <% end %>
+</div>
