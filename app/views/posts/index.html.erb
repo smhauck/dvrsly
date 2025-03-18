@@ -1,10 +1,9 @@
 <% content_for :title, "DVRSLY" %>
 <div id="posts">
   <% @posts.each do |post| %>
-
-
 <div id="<%= dom_id post %>" class="post">
   <p class="post-title"><%= link_to post.title, post %></p>
+  <p class="post-author"><%= post.user.username %></p>
   <p class="post-body"><%= post.body %></p>
 </div>
   <% end %>

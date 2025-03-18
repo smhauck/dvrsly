@@ -13,12 +13,13 @@
           </ul>
         </li>
         <% if authenticated? %>
-        <li class="nav-item">
-          <%= link_to "Change Password", edit_password_url(Current.user.password_reset_token), class: "nav-link" %>
-        </li>
-        <li>
-          <%= button_to "Sign Out", session_path, method: :delete, class: "nav-link" %>
-        </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false"><%= Current.user.username %></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Change Password", edit_password_url(Current.user.password_reset_token), class: "nav-link" %></li>
+              <li><%= button_to "Sign Out", session_path, method: :delete, class: "nav-link" %></li>
+            </ul>
+          </li>
         <% else %> 
         <li class="nav-item">
           <%= link_to "Sign Up", new_registration_path, class: "nav-link" %>
@@ -27,9 +28,6 @@
           <%= link_to "Sign In", new_session_path, class: "nav-link" %>
         </li>
         <% end %> 
-        <li class="nav-item nav-link">
-          <% if Current.user %><%= Current.user.email_address %><% end %>
-        </li>
       </ul>
     </div>
   </div>

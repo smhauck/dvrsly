@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :sessions, dependent: :destroy
+  has_many :posts
   validates :username, presence: true, uniqueness: true
   # FIXME: validates :username, exclusion: { message: "DUH", in: ->(user) { user.prohibited_usernames } }
 
