@@ -1,7 +1,9 @@
+<% content_for :title, "DVRSLY:post.title" %>
 <div><%= link_to "Back", request.referrer %></div>
 
-<div id="<%= dom_id post %>">
+<div id="<%= dom_id post %>" class="post">
   <p class="post-title"><%= sanitize post.title %></p>
   <p class="post-author"><%= post.user.username %></p>
-  <p class="post-body"><%= simple_format(post.body) %></p>
+  <div class="post-body"><%= simple_format(post.body) %></div>
 </div>
+
