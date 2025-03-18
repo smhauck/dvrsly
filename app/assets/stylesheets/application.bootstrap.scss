@@ -2,7 +2,8 @@
 @import 'bootstrap-icons/font/bootstrap-icons';
 
 body { font-size: 100%; }
-.post-title { font-size: 2em; }
-.post-body { font-size: 1em; }
+.post { border: 1px solid grey; border-radius: 10px; }
+.post-title { font-size: 1.5em; padding-left: 5px; }
+.post-body { font-size: 1em; padding-left: 5px;}
 
 footer { margin-top: 50px; }
