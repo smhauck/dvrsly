@@ -1,5 +1,10 @@
 <%= render @post %>
 
 <div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> <%= button_to "Destroy this post", @post, method: :delete %>
+  <% if Current.user.id %>
+    <% if Current.user.id == @post.user_id %>
+      <%= button_to "Edit Post", edit_post_path(@post), method: :get %> <%= button_to "Delete Post", @post, method: :delete %>
+    <% end %>
+  <% end %>
+  <%= link_to "Comment on Post", new_post_comment_path(@post) %>
 </div>

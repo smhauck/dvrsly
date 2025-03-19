@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :resume_session
   before_action :set_post, only: %i[ show edit update destroy ]
   allow_unauthenticated_access only: %i[ index show ]
 
@@ -42,24 +43,32 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to @post, notice: "Post was successfully updated." }
-        format.json { render :show, status: :ok, location: @post }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+    if @post.user_id == Current.user.id
+      respond_to do |format|
+        if @post.update(post_params)
+          format.html { redirect_to @post, notice: "Post was successfully updated." }
+          format.json { render :show, status: :ok, location: @post }
+        else
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to @post, notice: "You can only edit your own posts."
     end
   end
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
-    @post.destroy!
+    if @post.user_id == Current.user.id
+      @post.destroy!
 
-    respond_to do |format|
-      format.html { redirect_to posts_path, status: :see_other, notice: "Post was successfully destroyed." }
-      format.json { head :no_content }
+      respond_to do |format|
+        format.html { redirect_to posts_path, status: :see_other, notice: "Post was successfully destroyed." }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to @post, notice: "You can only delete your own posts."
     end
   end
 

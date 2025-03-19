@@ -5,5 +5,11 @@
   <p class="post-title"><%= sanitize post.title %></p>
   <p class="post-author"><%= link_to post.user.username, post.user %></p>
   <div class="post-body"><%= simple_format(post.body) %></div>
-</div>
 
+<% post.comments.each do |comment| %>
+  <div id="<%= dom_id comment %>" class="comment">
+    <p class="comment-author"><%= link_to comment.user.username, comment.user %> <% if comment.user_id == Current.user.id %><%= link_to "Edit", [:edit, post, comment] %><% end %></p>
+    <p class="comment-body"><%= comment.body %></p>
+  </div>
+<% end %>
+</div>

@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
-  resource :session
+  # resources :comments, only: [:show, :edit, :update, :destroy]
+  resources :comments, only: [:show, :destroy]
   resource :registration
+  resource :session
   resources :passwords, param: :token
-  # resources :users, only: [:index, :show] do
-  resources :users do
-    resources :posts, only: [:index, :show]
+  resources :posts do
+    resources :comments, only: [:index, :new, :create, :edit, :update]
   end
-  resources :posts
+  # resources :users do
+  resources :users, only: [:index, :show] do
+    resources :posts, only: [:index, :show]
+    resources :comments, only: [:index]
+  end
   get "about" => "pages#about"
   get "faq" => "pages#faq"
   get "pages/about"

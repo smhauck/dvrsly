@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_action :resume_session, only: [:index]
+
   allow_unauthenticated_access
 
   def index
