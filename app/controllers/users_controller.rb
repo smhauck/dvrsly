@@ -6,10 +6,11 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users= user.all
+    @users = user.all
   end
 
   def posts
+    @posts = @user.posts.all
   end
 
   def profile

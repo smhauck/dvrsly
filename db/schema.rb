@@ -33,6 +33,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_17_204904) do
     t.string "email_address", null: false
     t.string "username", null: false
     t.string "password_digest", null: false
+    t.text "about"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
