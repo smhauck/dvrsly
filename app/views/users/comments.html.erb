@@ -1,9 +1,10 @@
 <% content_for :title, "DVRSLY" %>
+<h1><%= @user.username %></h1>
+
 <div id="posts">
-  <% @posts.each do |post| %>
+  <% @user.posts.each do |post| %>
     <div id="<%= dom_id post %>" class="post">
       <p class="post-title"><%= link_to sanitize(post.title), post %></p>
-      <p class="post-author"><%= link_to post.user.username, post.user %></p>
       <div class="post-body"><%= truncate(strip_tags(post.body), length: 250) %></div>
     </div>
   <% end %>

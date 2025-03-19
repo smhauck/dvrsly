@@ -3,17 +3,20 @@ Rails.application.routes.draw do
   resource :session
   resource :registration
   resources :passwords, param: :token
-  get "pages/index"
-  get "pages/about"
+  resources :users, only: [:index, :show] do
+    resources :posts
+  end
   get "about" => "pages#about"
-  get "pages/terms"
-  get "terms" =>"pages#terms"
-  get "pages/privacy"
-  get "privacy" => "pages#privacy"
-  get "pages/faq"
   get "faq" => "pages#faq"
+  get "pages/about"
+  get "pages/faq"
+  get "pages/index"
+  get "pages/privacy"
   get "pages/roadmap"
+  get "pages/terms"
+  get "privacy" => "pages#privacy"
   get "roadmap" => "pages#roadmap"
+  get "terms" =>"pages#terms"
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
