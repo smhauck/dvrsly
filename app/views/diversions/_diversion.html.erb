@@ -1,14 +1,15 @@
 <% content_for :title, "DVRSLY:diversion.title" %>
-<div><%= link_to "Back", request.referrer %></div>
 
 <div id="<%= dom_id diversion %>" class="diversion">
-  <p class="diversion-title"><%= sanitize diversion.title %></p>
-  <div class="diversion-description"><%= simple_format(diversion.description) %></div>
+  <p class="diversion-title"><%= link_to sanitize diversion.title, diversion %></p>
+  <p class="diversion-description"><%= simple_format(diversion.description) %></p>
 
+<% if @posts.present? %>
 <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
 <% @posts.each do |post| %>
     <p class="post-title"><%= link_to post.title, post %></p>
     <p class="post-author"><%= link_to post.user.username, post.user %></p>
     <p class="post-body"><%= post.body %></p>
+<% end %>
 <% end %>
 </div>
