@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :diversions do
+    resources :posts, only: [:index, :new, :create, :edit, :update]
+  end
   # resources :comments, only: [:show, :edit, :update, :destroy]
   resources :comments, only: [:show, :destroy]
   resource :registration

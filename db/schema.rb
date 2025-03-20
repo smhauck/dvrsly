@@ -21,12 +21,23 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_19_034058) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "diversions", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_diversions_on_user_id"
+  end
+
   create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.bigint "user_id", null: false
+    t.bigint "diversion_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["diversion_id"], name: "index_posts_on_diversion_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -52,6 +63,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_19_034058) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "diversions", "users"
+  add_foreign_key "posts", "diversions"
   add_foreign_key "posts", "users"
   add_foreign_key "sessions", "users"
 end

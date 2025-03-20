@@ -3,18 +3,53 @@
 
 body { font-size: 100%; }
 
+.diversion-body { font-size: 1em; padding-left: 5px; }
+.diversion-title { font-size: 1.5em; padding-left: 5px; }
+
+
+
+/* broke */
+.leftsidenav {
+  height: 100%; /* 100% Full-height */
+  width: 10%; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  /* z-index: 1; */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #f99; 
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* broke */
+.leftsidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+
+
 
 .comment { border: 1px solid grey; border-radius: 10px; }
 .comment-author { font-size: 1em; padding-left: 5px; }
 .comment-body { font-size: 1em; padding-left: 5px; }
+
+footer { bottom: 0; margin-top: 50px; }
+
+.main { background-color: #ff0; left-margin: 10%; }
 
 .post { border: 1px solid black; border-radius: 10px; 
   & .comment { border: 1px dotted grey; border-radius: 10px; }
   & .comment-author { font-size: 1em; padding-left: 5px; }
   & .comment-body { font-size: 1em; padding-left: 5px; }
 }
-.post-title { font-size: 1.5em; padding-left: 5px; }
+.post-diversion { font-size: 1em; padding-left: 5px; }
 .post-author { font-size: 1em; padding-left: 5px; }
 .post-body { font-size: 1em; padding-left: 5px; }
+.post-title { font-size: 1.5em; padding-left: 5px; }
 
-footer { margin-top: 50px; }

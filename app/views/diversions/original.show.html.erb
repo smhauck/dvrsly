@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @diversion %>
+
+<div>
+  <%= link_to "Edit this diversion", edit_diversion_path(@diversion) %> |
+  <%= link_to "Back to diversions", diversions_path %>
+
+  <%= button_to "Destroy this diversion", @diversion, method: :delete %>
+</div>

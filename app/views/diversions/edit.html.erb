@@ -1,0 +1,12 @@
+<% content_for :title, "Editing diversion" %>
+
+<h1>Editing diversion</h1>
+
+<%= render "form", diversion: @diversion %>
+
+<br>
+
+<div>
+  <%= link_to "Show this diversion", @diversion %> |
+  <%= link_to "Back to diversions", diversions_path %>
+</div>

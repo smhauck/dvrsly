@@ -5,7 +5,9 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    if params[:user_id]
+    if params[:diversion_id]
+      @posts = Diversion.find_by_id(params[:diversion_id]).posts
+    elsif params[:user_id]
       @posts = User.find_by_id(params[:user_id]).posts
     else
       @posts = Post.all

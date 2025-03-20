@@ -1,7 +1,7 @@
 <%= render @post %>
 
 <div>
-  <% if Current.user.id %>
+  <% if Current.user %>
     <% if Current.user.id == @post.user_id %>
       <%= button_to "Edit Post", edit_post_path(@post), method: :get %> <%= button_to "Delete Post", @post, method: :delete %>
     <% end %>

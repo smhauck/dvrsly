@@ -1,0 +1,27 @@
+<%= form_with(model: diversion) do |form| %>
+  <% if diversion.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(diversion.errors.count, "error") %> prohibited this diversion from being saved:</h2>
+
+      <ul>
+        <% diversion.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block", autofocus: true %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.textarea :description %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

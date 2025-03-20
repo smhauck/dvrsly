@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   # GET /comments or /comments.json
   def index
     if params[:user_id]
-      @comments = User.find_by_id(params[:user_id]).comments
+      @pagy, @comments = pagy(User.find_by_id(params[:user_id]).comments)
     else
       @comments = Comment.all
     end

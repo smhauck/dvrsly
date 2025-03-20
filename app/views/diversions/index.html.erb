@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Diversions" %>
+
+<h1>Diversions</h1>
+
+<div id="diversions">
+  <% @diversions.each do |diversion| %>
+    <%= render diversion %>
+  <% end %>
+</div>
+
+<%= link_to "New diversion", new_diversion_path %>
