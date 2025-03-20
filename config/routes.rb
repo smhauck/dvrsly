@@ -1,20 +1,23 @@
 Rails.application.routes.draw do
-  resources :diversions do
-    resources :posts, only: [:index, :new, :create, :edit, :update]
+
+  resources :diversions, path: "/d" do
+    resources :posts, path: "p", only: [:index, :new, :create, :edit, :update]
   end
-  # resources :comments, only: [:show, :edit, :update, :destroy]
-  resources :comments, only: [:show, :destroy]
+
+  resources :comments, path: "/c", only: [:show, :destroy]
   resource :registration
   resource :session
   resources :passwords, param: :token
-  resources :posts do
-    resources :comments, only: [:index, :new, :create, :edit, :update]
+
+  resources :posts, path: "/p" do
+    resources :comments, path: "c", only: [:index, :new, :create, :edit, :update]
   end
-  # resources :users do
-  resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show]
-    resources :comments, only: [:index]
+
+  resources :users, path: "/u", only: [:index, :show] do
+    resources :posts, path: "p", only: [:index, :show]
+    resources :comments, path: "c", only: [:index]
   end
+
   get "about" => "pages#about"
   get "faq" => "pages#faq"
   get "pages/about"
