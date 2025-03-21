@@ -1,0 +1,93 @@
+# https://www.state.gov/foreign-terrorist-organizations/
+Ansarallah
+Cartel de Jalisco Nueva Generacion (CJNG)
+Cartel de Sinaloa
+Cartel del Golfo (Gulf Cartel)
+Cartel del Noreste
+Carteles Unidos
+La Nueva Familia Michoacana
+Mara Salvatrucha (MS-13)
+Tren de Aragua
+Revolutionary Armed Forces of Colombia – People’s Army (FARC-EP)
+Segunda Marquetalia
+ISIS-DRC
+ISIS-Mozambique
+Harakat Sawa’d Misr (HASM)
+Asa’ib Ahl al-Haq (AAH)
+Islamic Revolutionary Guard Corps (IRGC)
+Jama’at Nusrat al-Islam wal-Muslimin (JNIM)
+al-Ashtar Brigades
+ISIS in the Greater Sahara (ISIS-GS)
+ISIS-Bangladesh
+ISIS-Philippines
+ISIS-West Africa
+Hizbul Mujahideen (HM)
+al-Qa’ida in the Indian Subcontinent (AQIS)
+ISIS-Libya
+Islamic State’s Khorasan Province (ISIS-K)
+Jaysh Rijal al-Tariq al Naqshabandi (JRTN)
+al-Nusrah Front, aka Hay’at Tahrir al-Sham (ANF/HTS)
+— Jabhat Fath al-Sham Amendment (November 14, 2016)
+— Hay’at Tahrir al-Sham Amendment (June 1, 2018)
+ISIS-Sinai Province (formerly Ansar Bayt al-Maqdis)
+— ISIL Sinai Province Amendment (September 30, 2015)
+Ansar al-Shari’a in Benghazi
+Ansar al-Shari’a in Darnah
+Ansar al-Shari’a in Tunisia
+al-Mulathamun Battalion, aka al-Murabitoun
+Ansaru
+Boko Haram
+Ansar al-Dine (AAD)
+Haqqani Network (HQN)
+Abdallah Azzam Brigades
+— Marwan Hadid Brigades Amendment (November 2, 2017)
+Jemaah Anshorut Tauhid (JAT)
+Indian Mujahedeen (IM)
+Army of Islam (AOI)
+Jaysh al-Adl (formerly Jundallah)
+— Jaysh al-Adl Amendment (July 2, 2019)
+Tehrik-e Taliban Pakistan (TTP)
+Harakat ul-Jihad-i-Islami (HUJI)
+al-Qa’ida in the Arabian Peninsula (AQAP)
+— Ansar al-Shari’a Amendment (October 5, 2012)
+Kata’ib Hizballah (KH)
+Revolutionary Struggle (RS)
+al-Shabaab
+— al-Hijra Amendment (August 1, 2018)
+Harakat ul-Jihad-i-Islami/Bangladesh (HUJI-B)
+Islamic Jihad Union (IJU)
+ISIS (formerly al-Qa’ida in Iraq)
+— Islamic State of Iraq Amendment (January 26, 2012)
+— al-Hayat Media Center and Amaq News Agency Amendments (March 22, 2019)
+Continuity Irish Republican Army (CIRA)
+Ansar al-Islam (AAI)
+Lashkar i Jhangvi (LJ)
+Jemaah Islamiya (JI)
+Communist Party of the Philippines/New People’s Army (CPP/NPA)
+Al-Aqsa Martyrs Brigade (AAMB)
+al-Qa’ida in the Islamic Maghreb (formerly Salafist Group for Call and Combat)
+— AQIM Amendment (February 20, 2008)
+Asbat al-Ansar (AAA)
+Jaish-e-Mohammed (JEM)
+Lashkar-e-Tayyiba (LeT)
+— Tehrik-e-Tahafuz Qibla Awwal, Tehrik-e-Hurmat-e-Rasool, and Al-Anfal Trust Amendments (June 26, 2014)
+— Al Muhammadia Students Amendment (December 30, 2016)
+— Tehreek-e-Azadi-e-Kashmir and Milli Muslim League Amendments (April 4, 2018)
+New Irish Republican Army (formerly Real IRA)
+— New IRA Amendment (June 30, 2023)
+Islamic Movement of Uzbekistan (IMU)
+al-Qa’ida (AQ)
+Abu Sayyaf Group (ASG)
+HAMAS
+Harakat ul-Mujahidin (HUM)
+— Ansar ul-Ummah Amendment (August 8, 2014)
+Hizballah
+Kurdistan Workers Party (PKK)
+Liberation Tigers of Tamil Eelam (LTTE)
+National Liberation Army (ELN)
+Palestine Islamic Jihad (PIJ)
+Palestine Liberation Front (PLF)
+PFLP-General Command (PFLP-GC)
+Popular Front for the Liberation of Palestine (PFLP)
+Revolutionary People’s Liberation Party/Front (DHKP/C)
+Shining Path (Sendero Luminoso, SL)
