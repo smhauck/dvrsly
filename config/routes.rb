@@ -4,19 +4,23 @@ Rails.application.routes.draw do
     resources :posts, path: "p", only: [:index, :new, :create, :edit, :update]
   end
 
-  resources :comments, path: "/c", only: [:show, :destroy]
-  resource :registration
-  resource :session
-  resources :passwords, param: :token
-
   resources :posts, path: "/p" do
     resources :comments, path: "c", only: [:index, :new, :create, :edit, :update]
   end
 
+  resources :posts, path: "/p", only: [:index, :new, :create, :edit, :show, :update, :destroy]
+
+  resources :comments, path: "/c", only: [:show, :destroy]
+
   resources :users, path: "/u", only: [:index, :show] do
     resources :posts, path: "p", only: [:index, :show]
-    resources :comments, path: "c", only: [:index]
+    resources :comments, path: "c", only: [:index, :show]
   end
+
+  resource :registration
+  resource :session
+  resources :passwords, param: :token
+
 
   get "about" => "pages#about"
   get "faq" => "pages#faq"

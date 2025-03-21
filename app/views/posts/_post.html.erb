@@ -2,13 +2,14 @@
 <div><%= link_to "Back", request.referrer %></div>
 
 <div id="<%= dom_id post %>" class="post">
-  <p class="post-diversion"><%= link_to "d/" + post.diversion.title, post.diversion %>,  <%= link_to "u/" + post.user.username, post.user, class: "post-author" %></p>
+  <% if post.diversion.present? %><p class="post-diversion"><%= link_to "d/" + post.diversion.title, post.diversion %>,  <%= link_to "u/" + post.user.username, post.user, class: "post-author" %></p><% end %>
+  <p class="post-diversion"><%= link_to "u/" + post.user.username, post.user, class: "post-author" %></p>
   <p class="post-title"><%= sanitize post.title %></p>
   <div class="post-body"><%= simple_format(post.body) %></div>
 
 <% post.comments.each do |comment| %>
   <div id="<%= dom_id comment %>" class="comment">
-    <p class="comment-author"><%= link_to comment.user.username, comment.user %> <% if comment.user_id == Current.user.id %><%= link_to "Edit", [:edit, post, comment] %><% end %></p>
+    <p class="comment-author"><%= link_to comment.user.username, comment.user %> <% if Current.user.present? %><% if comment.user_id == Current.user.id %><%= link_to "Edit", [:edit, post, comment] %><% end %><% end %></p>
     <p class="comment-body"><%= comment.body %></p>
   </div>
 <% end %>

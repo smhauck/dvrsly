@@ -3,9 +3,11 @@
 <div id="posts">
   <% @posts.each do |post| %>
     <div id="<%= dom_id post %>" class="post">
-      <p class="post-diversion"><%= link_to post.diversion.title, post.diversion %></p>
-      <p class="post-title"><%= link_to sanitize(post.title), post %></p>
-      <p class="post-author"><%= link_to post.user.username, post.user %></p>
+      <p>
+        <span class="post-title"><%= link_to sanitize(post.title), post %></span>
+        <span class="post-author"><%= link_to "u/" + post.user.username, post.user %></span>
+        <% if post.diversion.present? %><span class="post-diversion"><%= link_to "d/" + post.diversion.title, post.diversion %></span><% end %>
+      </p>
       <div class="post-body"><%= truncate(strip_tags(post.body), length: 250) %></div>
     </div>
   <% end %>

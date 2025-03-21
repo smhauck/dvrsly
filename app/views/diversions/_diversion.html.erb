@@ -7,8 +7,10 @@
   <% if @posts.present? %>
     <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
     <% @posts.each do |post| %>
-      <p class="post-title"><%= link_to post.title, post %></p>
-      <p class="post-author"><%= link_to post.user.username, post.user %></p>
+      <p>
+        <span class="post-title"><%= link_to "p/" + post.title, post %></span>
+        <span class="post-author"><%= link_to "u/" + post.user.username, post.user %></span>
+      </p>
       <p class="post-body"><%= post.body %></p>
     <% end %>
   <% end %>

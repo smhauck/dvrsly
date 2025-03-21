@@ -23,6 +23,10 @@ User.create(email_address: "smh@smh.com", username: "smh", password: "smh")
 User.create(email_address: "one@one.com", username: "one", password: "one")
 User.create(email_address: "two@two.com", username: "two", password: "two")
 User.create(email_address: "three@three.com", username: "three", password: "three")
+User.create(email_address: "four@three.com", username: "four", password: "four")
+User.create(email_address: "five@five.com", username: "five", password: "five")
+User.create(email_address: "six@six.com", username: "six", password: "six")
+User.create(email_address: "seven@seven.com", username: "seven", password: "seven")
 
 Diversion.create(title: "fountainpens", user_id:"1")
 Diversion.create(title: "wheelchairs", user_id:"1")
@@ -35,14 +39,26 @@ Diversion.create(title: "mugs", user_id:"3")
 Diversion.create(title: "phones", user_id:"6")
 
 
-puts "Posts Seeding Starting"
-rounds = 6
+puts "Starting Posts Seeding"
+rounds = 50
 (1..rounds).each do |x|
-  (1..50).each do |i|
-    Post.create!(title: "Post Title #{i}", body: "this is the body here #{i}", user_id: "#{x}", diversion_id: "#{x}")
+  (1..9).each do |i|
+    Post.create!(title: "Post Title #{x}.#{i}", body: "this is the body here #{i}", user_id: "#{i}", diversion_id: "#{i}")
   end
   puts "Posts Seeding: Round #{x} of #{rounds} Complete"
 end
 puts "Posts Seeding Complete"
+
+puts "Starting Comments Seeding"
+rounds = 50
+(1..rounds).each do |x|
+  (1..5).each do |i|
+    Comment.create!(body: "this is the body here #{x} - #{i}", user_id: "#{i}", post_id: "#{x}")
+  end
+  puts "Comments Seeding: Round #{x} of #{rounds} Complete"
+end
+puts "Comments Seeding Complete"
+
+
 
 puts "All Seeding Complete"

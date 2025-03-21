@@ -20,6 +20,11 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+    if params[:diversion_id]
+      @in_diversion = true
+    else
+      @in_diversion = false
+    end
     @post = Post.new
   end
 
@@ -31,6 +36,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = Current.user.id
+    @post.diversion_id = params[:diversion_id]
 
     respond_to do |format|
       if @post.save
@@ -82,6 +88,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.expect(post: [ :title, :body ])
+      params.expect(post: [ :title, :body, :diversion_id ])
     end
 end

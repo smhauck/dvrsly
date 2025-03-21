@@ -1,4 +1,6 @@
-<%= form_with(model: post) do |form| %>
+<% if @in_diversion %>
+<%= form_with(model: [:diversion, @post]) do |form| %>
+
   <% if post.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -13,7 +15,7 @@
 
   <div>
     <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, autofocus: true %>
   </div>
 
   <div>
@@ -24,4 +26,35 @@
   <div>
     <%= form.submit %>
   </div>
+<% end %>
+
+<% else %>
+
+<%= form_with(model: @post) do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title, autofocus: true %>
+  </div>
+
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.textarea :body %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
 <% end %>
