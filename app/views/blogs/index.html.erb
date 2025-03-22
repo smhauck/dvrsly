@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Blogs" %>
+
+<div><%= link_to "Back", request.referrer %></div>
+<h1>Blogs</h1>
+
+<div id="blogs">
+  <% @blogs.each do |blog| %>
+    <%= render blog %>
+  <% end %>
+</div>
+
+<%= link_to "New blog", new_blog_path %>

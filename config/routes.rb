@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :blogs, path: "/b" do
+    resources :posts, path: "p", only: [:index, :new, :create, :edit, :update]
+  end
+
   resources :diversions, path: "/d" do
     resources :posts, path: "p", only: [:index, :new, :create, :edit, :update]
   end
@@ -13,8 +17,9 @@ Rails.application.routes.draw do
   resources :comments, path: "/c", only: [:show, :destroy]
 
   resources :users, path: "/u", only: [:index, :show] do
-    resources :posts, path: "p", only: [:index, :show]
+    resources :blogs, path: "b", only: [:index, :show]
     resources :comments, path: "c", only: [:index, :show]
+    resources :posts, path: "p", only: [:index, :show]
   end
 
   resource :registration

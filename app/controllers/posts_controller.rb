@@ -7,6 +7,8 @@ class PostsController < ApplicationController
   def index
     if params[:diversion_id]
       @pagy, @posts = pagy(Diversion.find_by_id(params[:diversion_id]).posts)
+    elsif params[:blog_id]
+      @pagy, @posts = pagy(Blog.find_by_id(params[:blog_id]).posts)
     elsif params[:user_id]
       @pagy, @posts = pagy(User.find_by_id(params[:user_id]).posts)
     else
@@ -22,6 +24,8 @@ class PostsController < ApplicationController
   def new
     if params[:diversion_id]
       @in_diversion = true
+    elsif params[:blog_id]
+      @in_blog = true
     else
       @in_diversion = false
     end
@@ -37,6 +41,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = Current.user.id
     @post.diversion_id = params[:diversion_id]
+    @post.blog_id = params[:blog_id]
 
     respond_to do |format|
       if @post.save
@@ -88,6 +93,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.expect(post: [ :title, :body, :diversion_id ])
+      params.expect(post: [ :title, :body, :blog_id, :diversion_id ])
     end
 end

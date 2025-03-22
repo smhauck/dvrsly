@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ comments posts profile show ]
+  before_action :set_user, only: %i[ blogs comments posts profile show ]
   allow_unauthenticated_access only: %i[ index show ]
+
+  def blogs
+    @blogs = @user.blogs.all
+  end
 
   def comments
   end

@@ -1,0 +1,17 @@
+<% content_for :title, "DVRSLY:blog.title" %>
+
+<div id="<%= dom_id blog %>" class="blog">
+  <p class="blog-title"><%= link_to sanitize(blog.title), blog %></p>
+  <p class="blog-description"><%= simple_format(blog.description) %></p>
+
+  <% if @posts.present? %>
+    <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
+    <% @posts.each do |post| %>
+      <p>
+        <span class="post-title"><%= link_to "p/" + post.title, post %></span>
+        <span class="post-author"><%= link_to "u/" + post.user.username, post.user %></span>
+      </p>
+      <p class="post-body"><%= post.body %></p>
+    <% end %>
+  <% end %>
+</div>
