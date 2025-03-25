@@ -27,15 +27,13 @@ Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
 
-  # get "about" => "pages#about"
-  # get "faq" => "pages#faq"
-  # get "privacy" => "pages#privacy"
-  # get "roadmap" => "pages#roadmap"
-  
 
   # Pages stored in database. /pages/page.title shows the page from the db
-  get "pages/:title", to: "pages#show", as: "page"
+  get "doc/:title", to: "pages#show", as: :doc
   resources :pages
+
+
+
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

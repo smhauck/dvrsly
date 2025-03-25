@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_action :resume_session
-  before_action :set_page, only: %i[ show edit update destroy ]
+  before_action :set_page, only: %i[ edit update destroy ]
   # allow_unauthenticated_access only: %i[ index show ]
   allow_unauthenticated_access
 
@@ -50,6 +50,7 @@ class PagesController < ApplicationController
   end
 
   def show
+    @page = Page.where("title = ?", params[:title])
   end
 
   # PATCH/PUT /pages/1 or /pages/1.json
@@ -77,8 +78,8 @@ class PagesController < ApplicationController
     def set_page
       if params[:id]
         @page = Page.find(params.expect(:id))
-      elsif params[:title]
-        @page = Page.where("title = ?", params[:title])
+      # elsif params[:title]
+        # @page = Page.where("title = ?", params[:title])
       end
     end
 

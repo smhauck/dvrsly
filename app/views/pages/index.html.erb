@@ -1,7 +1,5 @@
 <h1>Pages</h1>
 
-
-
 <% content_for :title, "Pages" %>
 <p style="color: green"><%= notice %></p>
 
@@ -9,9 +7,13 @@
   <% @pages.each do |page| %>
     <div id="<%= dom_id page %>" class="page">
       <p>
-        <span class="page-title"><%= link_to sanitize(page.title), page %></span>
+        <span class="page-title"><%= link_to page.title, doc_path(page.title) %></span>
       </p>
       <div class="page-body "><%= truncate(strip_tags(page.body), length: 250) %></div>
+  <h2>page = <%= page.inspect %> END</h2>
+  <h2>@page = <%= page %> END</h2>
+<h1>bottom of page</h1>
+
     </div>
   <% end %>
 </div>
