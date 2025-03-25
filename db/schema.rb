@@ -31,11 +31,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_19_034058) do
     t.text "body"
     t.bigint "post_id", null: false
     t.bigint "user_id", null: false
-    t.bigint "supcomment_id"
+    t.bigint "parent_comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["parent_comment_id"], name: "index_comments_on_parent_comment_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
-    t.index ["supcomment_id"], name: "index_comments_on_supcomment_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -89,7 +89,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_19_034058) do
   end
 
   add_foreign_key "blogs", "users"
-  add_foreign_key "comments", "comments", column: "supcomment_id"
+  add_foreign_key "comments", "comments", column: "parent_comment_id"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "diversions", "users"
