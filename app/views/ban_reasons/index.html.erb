@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Ban reasons" %>
+
+<h1>Ban reasons</h1>
+
+<div id="ban_reasons">
+  <% @ban_reasons.each do |ban_reason| %>
+    <%= render ban_reason %>
+    <p>
+      <%= link_to "Show this ban reason", ban_reason %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New ban reason", new_ban_reason_path %>

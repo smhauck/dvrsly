@@ -1,0 +1,12 @@
+<% content_for :title, "Editing ban reason" %>
+
+<h1>Editing ban reason</h1>
+
+<%= render "form", ban_reason: @ban_reason %>
+
+<br>
+
+<div>
+  <%= link_to "Show this ban reason", @ban_reason %> |
+  <%= link_to "Back to ban reasons", ban_reasons_path %>
+</div>

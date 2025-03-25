@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ban_reasons
 
   resources :blogs, path: "/b" do
     resources :posts, path: "p", only: [:index, :new, :create, :edit, :update]

@@ -1,14 +1,15 @@
+<% content_for :title, "Blogs" %>
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Blogs" %>
-
-<div><%= link_to "Back", request.referrer %></div>
-<h1>Blogs</h1>
-
+<%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
 <div id="blogs">
   <% @blogs.each do |blog| %>
-    <%= render blog %>
+    <div id="<%= dom_id blog %>" class="blog">
+      <p>
+        <span class="blog-title"><%= link_to sanitize(blog.title), blog %></span>
+        <span class="blog-author"><%= link_to "u/" + blog.user.username, blog.user %></span>
+      </p>
+      <div class="blog-description"><%= truncate(strip_tags(blog.description), length: 250) %></div>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New blog", new_blog_path %>

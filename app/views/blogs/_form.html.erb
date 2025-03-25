@@ -13,17 +13,12 @@
 
   <div>
     <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, autofocus: true, placeholder: "Create a Title" %>
   </div>
 
   <div>
     <%= form.label :description, style: "display: block" %>
-    <%= form.textarea :description %>
-  </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.textarea :description, placeholder: "Max length 500 characters", maxlength: 500 %>
   </div>
 
   <div>

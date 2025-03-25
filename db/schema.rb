@@ -11,6 +11,13 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[8.0].define(version: 2025_03_19_034058) do
+  create_table "ban_reasons", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.text "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "blogs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -68,8 +75,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_19_034058) do
     t.string "username", null: false
     t.string "password_digest", null: false
     t.text "about"
+    t.boolean "banned", default: false, null: false
+    t.datetime "banned_datetime"
+    t.bigint "banned_by_id"
+    t.bigint "ban_reasons_id"
+    t.text "banned_comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["ban_reasons_id"], name: "index_users_on_ban_reasons_id"
+    t.index ["banned_by_id"], name: "index_users_on_banned_by_id"
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
@@ -83,4 +97,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_19_034058) do
   add_foreign_key "posts", "diversions"
   add_foreign_key "posts", "users"
   add_foreign_key "sessions", "users"
+  add_foreign_key "users", "users", column: "banned_by_id"
 end

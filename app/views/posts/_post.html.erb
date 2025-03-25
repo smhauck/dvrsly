@@ -2,8 +2,7 @@
 <div><%= link_to "Back", request.referrer %></div>
 
 <div id="<%= dom_id post %>" class="post">
-  <% if post.diversion.present? %><p class="post-diversion"><%= link_to "d/" + post.diversion.title, post.diversion %>,  <%= link_to "u/" + post.user.username, post.user, class: "post-author" %></p><% end %>
-  <p class="post-diversion"><%= link_to "u/" + post.user.username, post.user, class: "post-author" %></p>
+  <p><% if post.diversion.present? %><span class="post-diversion"><%= link_to "d/" + post.diversion.title, post.diversion %>, </span><% end %><%= link_to "u/" + post.user.username, post.user, class: "post-author" %></span></p>
   <p class="post-title"><%= sanitize post.title %></p>
   <div class="post-body"><%= simple_format(post.body) %></div>
 

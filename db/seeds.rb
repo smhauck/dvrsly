@@ -17,6 +17,8 @@ puts "Starting Seeding"
 # load "#{rr}industries.rb"
 
 
+BanReason.create(name: "Abusive Conduct")
+
 User.create(email_address: "admin@dvrsly.com", username: "admin", password: "admin")
 User.create(email_address: "deleted@dvrsly.com", username: "deleted", password: "deleted")
 User.create(email_address: "smh@smh.com", username: "smh", password: "smh")

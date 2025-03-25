@@ -1,3 +1,10 @@
+# More from the following soures
+# https://en.wiktionary.org/wiki/Category:English_ethnic_slurs
+# https://vault.fbi.gov/search?Subject%3Alist=Gangs/Extremist%20Groups
+# https://digital.library.cornell.edu/catalog/ss:22374937
+# https://www.publicsafety.gc.ca/cnt/ntnl-scrt/cntr-trrrsm/lstd-ntts/crrnt-lstd-ntts-en.aspx
+
+
 # Real names
 Elon Musk
 Donald J. Trump
@@ -41,6 +48,7 @@ Barely legal
 childbride
 jailbait
 Lolita
+Pedobear
 Pedophilia
 Prepubescence
 preteen
@@ -205,6 +213,7 @@ beaner
 wetback
 
 # Transphobic
+Men going their own way (MGTOW) 
 tranny
 trannie
 
@@ -228,6 +237,8 @@ homo
 Homophobia
 homosexual
 lesbophobia
+Men going their own way (MGTOW) 
+no homo
 polesmoker
 poo stabber
 queer
@@ -306,6 +317,9 @@ Neo-Confederates
 Neo-Nazism
 NSBM (National socialist black metal)
 NSDAP (Nationalsozialistische Deutsche Arbeiterpartei)
+Oath Keepers
+Patriot Front
+Proud Boys
 Race realism / Racial realism
 The Great Replacement
 ROA
@@ -315,6 +329,7 @@ segregationist
 Sieg Heil
 Six Gorillion
 skinhead
+StormFront
 Supreme White Power
 SWP
 Terrorgram
@@ -327,6 +342,7 @@ white power
 White power skinhead
 white supremacist
 White supremacy
+white warrior
 You Will Not Replace Us
 YWNRU
 ZOG
@@ -338,8 +354,16 @@ Zionism
 Zionist
 Zionist Occupied Government
 
-# Terrorist Organizations
-Hamas
+
+
+# Anti-Everybody
+African Hebrew Israelites
+Black Hebrews
+Black Hebrew Israelites
+Black Israelites
+Black supremacy
+Hebrew Israelites
+Israelite School of Universal Practical Knowledge
 
 # Anti-Romani and Anti-Irish Travellers
 pikey
@@ -351,13 +375,9 @@ cumskin
 cumskinned
 slave owner
 
-# Anti-Everybody
-African Hebrew Israelites
-Black Hebrews
-Black Hebrew Israelites
-Black Israelites
-Black supremacy
-Hebrew Israelites
-Israelite School of Universal Practical Knowledge
+# Anti-Woman / Misogynist
+Men going their own way (MGTOW) 
+RedPill
 
-
+# Terrorist Organizations
+Hamas
