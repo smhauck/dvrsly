@@ -22,6 +22,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_033710) do
     t.string "title"
     t.text "description"
     t.bigint "user_id", null: false
+    t.boolean "is_deleted", default: false, null: false
+    t.boolean "is_moderated", default: false, null: false
+    t.datetime "deleted_at"
+    t.datetime "moderated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_blogs_on_user_id"
@@ -31,6 +35,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_033710) do
     t.text "body"
     t.boolean "is_deleted", default: false, null: false
     t.boolean "is_moderated", default: false, null: false
+    t.datetime "deleted_at"
+    t.datetime "moderated_at"
     t.bigint "post_id", null: false
     t.bigint "user_id", null: false
     t.bigint "parent_comment_id"
@@ -60,6 +66,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_033710) do
   create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.boolean "is_deleted", default: false, null: false
+    t.datetime "deleted_at"
+    t.datetime "moderated_at"
+    t.boolean "is_moderated", default: false, null: false
     t.bigint "user_id", null: false
     t.bigint "diversion_id"
     t.bigint "blog_id"

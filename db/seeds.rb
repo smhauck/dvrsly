@@ -61,6 +61,16 @@ rounds = 50
 end
 puts "Comments Seeding Complete"
 
+puts "Starting Blogs Seeding"
+rounds = 50
+(1..rounds).each do |x|
+  (1..5).each do |i|
+    Blog.create!(title: "Blog Title #{x} - #{i}", description: "this is the blog description here #{x} - #{i}", user_id: "#{i}")
+  end
+  puts "Blogs Seeding: Round #{x} of #{rounds} Complete"
+end
+puts "Blogs Seeding Complete"
+
 
 
 puts "All Seeding Complete"

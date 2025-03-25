@@ -61,7 +61,7 @@ class CommentsController < ApplicationController
     if @comment.user_id == Current.user.id
     @comment.destroy!
       respond_to do |format|
-        format.html { redirect_to comments_path, status: :see_other, notice: "Comment was successfully destroyed." }
+        format.html { redirect_to request.referer, status: :see_other, notice: "Comment was successfully destroyed." }
         format.json { head :no_content }
       end
     else

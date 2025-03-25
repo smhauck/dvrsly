@@ -13,8 +13,11 @@ class RegistrationsController < ApplicationController
       start_new_session_for user
       redirect_to after_authentication_url, notice: "Successfully Signed Up"
     else
-      # redirect_to new_session_path, alert: "Try another email address or password."
-      redirect_to root_path, alert: "Try another email address or password."
+      # redirect_to root_path, alert: "Try another email address or password."
+      print "ALERT ALERT ALERT ALERT ALERT ALERT ALERT ALERT = "
+      puts alert
+      # redirect_to root_path, alert: "Try another email address or password."
+      redirect_to root_path, alert: "prohibited username"
     end
   end
 
