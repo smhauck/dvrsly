@@ -45,7 +45,7 @@ puts "Starting Posts Seeding"
 rounds = 50
 (1..rounds).each do |x|
   (1..9).each do |i|
-    Post.create!(title: "Post Title #{x}.#{i}", body: "this is the body here #{i}", user_id: "#{i}", diversion_id: "#{i}")
+    Post.create!(title: "Post Title #{x}.#{i}", body: "this is the post body here #{i}", user_id: "#{i}", diversion_id: "#{i}")
   end
   puts "Posts Seeding: Round #{x} of #{rounds} Complete"
 end
@@ -55,7 +55,7 @@ puts "Starting Comments Seeding"
 rounds = 50
 (1..rounds).each do |x|
   (1..5).each do |i|
-    Comment.create!(body: "this is the body here #{x} - #{i}", user_id: "#{i}", post_id: "#{x}")
+    Comment.create!(body: "this is the comment body here #{x} - #{i}", user_id: "#{i}", post_id: "#{x}")
   end
   puts "Comments Seeding: Round #{x} of #{rounds} Complete"
 end
