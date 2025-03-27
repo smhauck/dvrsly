@@ -11,14 +11,14 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[8.0].define(version: 2025_03_25_033710) do
-  create_table "ban_reasons", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "ban_reasons", force: :cascade do |t|
     t.text "name"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "blogs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "blogs", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.bigint "user_id", null: false
@@ -31,7 +31,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_033710) do
     t.index ["user_id"], name: "index_blogs_on_user_id"
   end
 
-  create_table "comments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "comments", force: :cascade do |t|
     t.text "body"
     t.boolean "is_deleted", default: false, null: false
     t.boolean "is_moderated", default: false, null: false
@@ -47,7 +47,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_033710) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "diversions", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "diversions", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.bigint "user_id", null: false
@@ -56,14 +56,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_033710) do
     t.index ["user_id"], name: "index_diversions_on_user_id"
   end
 
-  create_table "pages", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "pages", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.boolean "is_deleted", default: false, null: false
@@ -80,7 +80,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_033710) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
-  create_table "sessions", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "sessions", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "ip_address"
     t.string "user_agent"
@@ -89,7 +89,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_033710) do
     t.index ["user_id"], name: "index_sessions_on_user_id"
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email_address", null: false
     t.string "username", null: false
     t.string "password_digest", null: false
