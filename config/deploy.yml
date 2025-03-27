@@ -7,7 +7,8 @@ image: your-user/dvrsly
 # Deploy to these servers.
 servers:
   web:
-    - 192.168.0.1
+    # - 192.168.0.1
+    - 0.0.0.0
   # job:
   #   hosts:
   #     - 192.168.0.1
