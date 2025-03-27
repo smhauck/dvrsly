@@ -75,7 +75,6 @@ class PostsController < ApplicationController
   def destroy
     if @post.user_id == Current.user.id
       @post.destroy!
-
       respond_to do |format|
         format.html { redirect_to posts_path, status: :see_other, notice: "Post was successfully destroyed." }
         format.json { head :no_content }
