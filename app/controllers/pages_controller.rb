@@ -49,7 +49,7 @@ class PagesController < ApplicationController
   end
 
   def show
-    @page = Page.where("title = ?", params[:title])
+    @page = Page.where("link = ?", params[:link])
   end
 
   # PATCH/PUT /pages/1 or /pages/1.json
@@ -77,14 +77,14 @@ class PagesController < ApplicationController
     def set_page
       if params[:id]
         @page = Page.find(params.expect(:id))
-      # elsif params[:title]
-        # @page = Page.where("title = ?", params[:title])
+      # elsif params[:link]
+        # @page = Page.where("link = ?", params[:link])
       end
     end
 
     # Only allow a list of trusted parameters through.
     def page_params
-      params.expect(page: [ :title, :body ])
+      params.expect(page: [ :link, :title, :body ])
     end
 
 end

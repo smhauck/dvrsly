@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   get "roadmap", to: "pages#roadmap"
 
   # Pages stored in database. /pages/page.title shows the page from the db
-  get "doc/:title", to: "pages#show", as: :doc
+  get "doc/:link", to: "pages#show", as: :doc
   resources :pages
 
 

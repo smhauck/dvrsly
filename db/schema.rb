@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_25_033710) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_28_082529) do
   create_table "ban_reasons", force: :cascade do |t|
     t.text "name"
     t.text "description"
@@ -61,6 +61,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_033710) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "link"
   end
 
   create_table "posts", force: :cascade do |t|

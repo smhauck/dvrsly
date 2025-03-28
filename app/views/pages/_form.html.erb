@@ -17,6 +17,11 @@
   </div>
 
   <div>
+    <%= form.label :link, style: "display: block" %>
+    <%= form.text_field :link, autofocus: true, placeholder: "Create a link" %>
+  </div>
+
+  <div>
     <%= form.label :body, style: "display: block" %>
     <%= form.textarea :body, placeholder: "Max length 500 characters", maxlength: 500 %>
   </div>
