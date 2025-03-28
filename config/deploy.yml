@@ -7,7 +7,7 @@ image: smhauck/dvrsly
 # Deploy to these servers.
 servers:
   web:
-    - 167.172.247.156
+    - 159.89.246.81
   # job:
   #   hosts:
   #     - 192.168.0.1
