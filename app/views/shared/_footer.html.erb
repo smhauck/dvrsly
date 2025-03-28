@@ -1,14 +1,14 @@
 <footer>
   <div class="container-fluid">
     <p>
-      <%= link_to "About", doc_path('about') %>
-      : <%= link_to "FAQ", doc_path('faq') %>
-      : <%= link_to "Roadmap", doc_path('roadmap')%>
-      : <%= link_to "Terms", doc_path('terms') %>
-      : <%= link_to "Privacy", doc_path('privacy') %>
+      <%= link_to "About", page_path('about') %>
+      : <%= link_to "FAQ", page_path('faq') %>
+      : <%= link_to "Roadmap", page_path('roadmap')%>
+      : <%= link_to "Terms", page_path('terms') %>
+      : <%= link_to "Privacy", page_path('privacy') %>
     </p>
     <p>
-      &copy; 2025 DVRSLY.com, Version <%= Dvrsly::Application::VERSION %>
+      <span class="copyright">&copy; 2025 DVRSLY.com</span> <span class="builtby">Built by Shannon</span>
     </p>
   </div>
 </footer>

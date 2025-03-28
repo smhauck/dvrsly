@@ -27,11 +27,22 @@ Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
 
-  get "roadmap", to: "pages#roadmap"
+  get "about" => "pages#about"
+  get "faq" => "pages#faq"
+  get "pages/about"
+  get "pages/faq"
+  get "pages/index"
+  get "pages/privacy"
+  get "pages/roadmap"
+  get "pages/terms"
+  get "privacy" => "pages#privacy"
+  get "roadmap" => "pages#roadmap"
+  get "terms" =>"pages#terms"
+
+  resources :pages
 
   # Pages stored in database. /pages/page.title shows the page from the db
-  get "doc/:link", to: "pages#show", as: :doc
-  resources :pages
+#  get "doc/:link", to: "pages#show", as: :doc
 
 
 
