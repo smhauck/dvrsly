@@ -21,7 +21,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_033710) do
   create_table "blogs", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.boolean "is_deleted", default: false, null: false
     t.boolean "is_moderated", default: false, null: false
     t.datetime "deleted_at"
@@ -37,9 +37,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_033710) do
     t.boolean "is_moderated", default: false, null: false
     t.datetime "deleted_at"
     t.datetime "moderated_at"
-    t.bigint "post_id", null: false
-    t.bigint "user_id", null: false
-    t.bigint "parent_comment_id"
+    t.integer "post_id", null: false
+    t.integer "user_id", null: false
+    t.integer "parent_comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["parent_comment_id"], name: "index_comments_on_parent_comment_id"
@@ -50,7 +50,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_033710) do
   create_table "diversions", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_diversions_on_user_id"
@@ -70,9 +70,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_033710) do
     t.datetime "deleted_at"
     t.datetime "moderated_at"
     t.boolean "is_moderated", default: false, null: false
-    t.bigint "user_id", null: false
-    t.bigint "diversion_id"
-    t.bigint "blog_id"
+    t.integer "user_id", null: false
+    t.integer "diversion_id"
+    t.integer "blog_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["blog_id"], name: "index_posts_on_blog_id"
@@ -81,7 +81,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_033710) do
   end
 
   create_table "sessions", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.string "ip_address"
     t.string "user_agent"
     t.datetime "created_at", null: false
@@ -96,8 +96,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_033710) do
     t.text "about"
     t.boolean "banned", default: false, null: false
     t.datetime "banned_datetime"
-    t.bigint "banned_by_id"
-    t.bigint "ban_reasons_id"
+    t.integer "banned_by_id"
+    t.integer "ban_reasons_id"
     t.text "banned_comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

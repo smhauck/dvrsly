@@ -19,58 +19,53 @@ puts "Starting Seeding"
 
 BanReason.create(name: "Abusive Conduct")
 
-User.create(email_address: "admin@dvrsly.com", username: "admin", password: "admin")
+puts "Starting Users Seeding"
 User.create(email_address: "deleted@dvrsly.com", username: "deleted", password: "deleted")
-User.create(email_address: "smh@smh.com", username: "smh", password: "smh")
-User.create(email_address: "one@one.com", username: "one", password: "one")
-User.create(email_address: "two@two.com", username: "two", password: "two")
-User.create(email_address: "three@three.com", username: "three", password: "three")
-User.create(email_address: "four@three.com", username: "four", password: "four")
-User.create(email_address: "five@five.com", username: "five", password: "five")
-User.create(email_address: "six@six.com", username: "six", password: "six")
-User.create(email_address: "seven@seven.com", username: "seven", password: "seven")
-
-Diversion.create(title: "fountainpens", user_id:"1")
-Diversion.create(title: "wheelchairs", user_id:"1")
-Diversion.create(title: "spyders", user_id:"3")
-Diversion.create(title: "guns", user_id:"3")
-Diversion.create(title: "cars", user_id:"4")
-Diversion.create(title: "stoves", user_id:"5")
-Diversion.create(title: "tables", user_id:"6")
-Diversion.create(title: "mugs", user_id:"3")
-Diversion.create(title: "phones", user_id:"6")
-
-
-puts "Starting Posts Seeding"
-rounds = 50
-(1..rounds).each do |x|
-  (1..9).each do |i|
-    Post.create!(title: "Post Title #{x}.#{i}", body: "this is the post body here #{i}", user_id: "#{i}", diversion_id: "#{i}")
-  end
-  puts "Posts Seeding: Round #{x} of #{rounds} Complete"
+User.create(email_address: "admin@dvrsly.com", username: "admin", password: "admin")
+User.create(email_address: "shannonmariehauck@gmail.com", username: "smh", password: "smh")
+(1..10).each do |i|
+  User.create!(email_address: "user.#{i}@dvrsly.com", username: "user#{i}", password: "asd#{i}flkjsadfljjw23434sdja")
 end
-puts "Posts Seeding Complete"
+puts "Users Seeding Complete"
 
-puts "Starting Comments Seeding"
-rounds = 50
-(1..rounds).each do |x|
-  (1..5).each do |i|
-    Comment.create!(body: "this is the comment body here #{x} - #{i}", user_id: "#{i}", post_id: "#{x}")
-  end
-  puts "Comments Seeding: Round #{x} of #{rounds} Complete"
-end
-puts "Comments Seeding Complete"
+puts "Starting Diversions Seeding"
+Diversion.create(title: "dvrsly", user_id:"3")
+Diversion.create(title: "fountainpens", user_id:"3")
+Diversion.create(title: "rubyonrails", user_id:"3")
+Diversion.create(title: "wheelchairs", user_id:"3")
+Diversion.create(title: "notebooks", user_id:"3")
+Diversion.create(title: "journaling", user_id:"3")
+Diversion.create(title: "writing", user_id:"3")
+puts "Diversions Seeding Complete"
 
-puts "Starting Blogs Seeding"
-rounds = 50
-(1..rounds).each do |x|
-  (1..5).each do |i|
-    Blog.create!(title: "Blog Title #{x} - #{i}", description: "this is the blog description here #{x} - #{i}", user_id: "#{i}")
-  end
-  puts "Blogs Seeding: Round #{x} of #{rounds} Complete"
-end
-puts "Blogs Seeding Complete"
-
-
+# puts "Starting Posts Seeding"
+# rounds = 50
+# (1..rounds).each do |x|
+#   (1..9).each do |i|
+#     Post.create!(title: "Post Title #{x}.#{i}", body: "this is the post body here #{i}", user_id: "#{i}", diversion_id: "#{i}")
+#   end
+#   puts "Posts Seeding: Round #{x} of #{rounds} Complete"
+# end
+# puts "Posts Seeding Complete"
+# 
+# puts "Starting Comments Seeding"
+# rounds = 50
+# (1..rounds).each do |x|
+#   (1..5).each do |i|
+#     Comment.create!(body: "this is the comment body here #{x} - #{i}", user_id: "#{i}", post_id: "#{x}")
+#   end
+#   puts "Comments Seeding: Round #{x} of #{rounds} Complete"
+# end
+# puts "Comments Seeding Complete"
+# 
+# puts "Starting Blogs Seeding"
+# rounds = 50
+# (1..rounds).each do |x|
+#   (1..5).each do |i|
+#     Blog.create!(title: "Blog Title #{x} - #{i}", description: "this is the blog description here #{x} - #{i}", user_id: "#{i}")
+#   end
+#   puts "Blogs Seeding: Round #{x} of #{rounds} Complete"
+# end
+# puts "Blogs Seeding Complete"
 
 puts "All Seeding Complete"
