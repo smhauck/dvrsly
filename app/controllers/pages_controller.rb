@@ -1,8 +1,7 @@
 class PagesController < ApplicationController
   before_action :resume_session
   before_action :set_page, only: %i[ edit update destroy ]
-  # allow_unauthenticated_access only: %i[ index show ]
-  allow_unauthenticated_access
+  allow_unauthenticated_access only: %i[ index show ]
 
 
   def about
