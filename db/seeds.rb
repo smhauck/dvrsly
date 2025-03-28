@@ -23,7 +23,7 @@ puts "Starting Users Seeding"
 User.create(email_address: "deleted@dvrsly.com", username: "deleted", password: "deleted")
 User.create(email_address: "admin@dvrsly.com", username: "admin", password: "admin")
 User.create(email_address: "shannonmariehauck@gmail.com", username: "smh", password: "smh")
-(1..10).each do |i|
+(1..1000).each do |i|
   User.create!(email_address: "user.#{i}@dvrsly.com", username: "user#{i}", password: "asd#{i}flkjsadfljjw23434sdja")
 end
 puts "Users Seeding Complete"
