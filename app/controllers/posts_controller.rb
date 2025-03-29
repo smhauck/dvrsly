@@ -6,13 +6,13 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     if params[:diversion_id]
-      @pagy, @posts = pagy(Diversion.find_by_id(params[:diversion_id]).posts)
+      @pagy, @posts = pagy(Diversion.find_by_id(params[:diversion_id]).posts.order(created_at: :desc))
     elsif params[:blog_id]
-      @pagy, @posts = pagy(Blog.find_by_id(params[:blog_id]).posts)
+      @pagy, @posts = pagy(Blog.find_by_id(params[:blog_id]).posts.order(created_at: :desc))
     elsif params[:user_id]
-      @pagy, @posts = pagy(User.find_by_id(params[:user_id]).posts)
+      @pagy, @posts = pagy(User.find_by_id(params[:user_id]).posts.order(created_at: :desc))
     else
-      @pagy, @posts = pagy(Post.all)
+      @pagy, @posts = pagy(Post.all.order(created_at: :desc))
     end
   end
 

@@ -7,6 +7,9 @@ class PagesController < ApplicationController
   def about
   end
 
+  def changelog
+  end
+
   def create
     @page = Page.new(page_params)
     # @page.user_id = Current.user.id

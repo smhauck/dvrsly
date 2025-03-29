@@ -27,14 +27,16 @@ Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
 
-  get "about" => "pages#about"
-  get "faq" => "pages#faq"
   get "pages/about"
+  get "pages/changelog"
   get "pages/faq"
   get "pages/index"
   get "pages/privacy"
   get "pages/roadmap"
   get "pages/terms"
+  get "about" => "pages#about"
+  get "changelog" => "pages#changelog"
+  get "faq" => "pages#faq"
   get "privacy" => "pages#privacy"
   get "roadmap" => "pages#roadmap"
   get "terms" =>"pages#terms"

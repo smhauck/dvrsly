@@ -5,12 +5,12 @@ class DiversionsController < ApplicationController
 
   # GET /diversions or /diversions.json
   def index
-    @pagy, @diversions = pagy(Diversion.all)
+    @pagy, @diversions = pagy(Diversion.all.order(created_at: :desc))
   end
 
   # GET /diversions/1 or /diversions/1.json
   def show
-    @pagy, @posts = pagy(@diversion.posts.all)
+    @pagy, @posts = pagy(@diversion.posts.all.order(created_at: :desc))
   end
 
   # GET /diversions/new
