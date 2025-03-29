@@ -1,3 +1,5 @@
+#!ruby
+
 # Recreate the Changelog page
 
 # changelog_file = Rails.root.to_s + "/app/views/pages/changelog.html.erb"
