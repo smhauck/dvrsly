@@ -8,7 +8,7 @@
 
 <% post.comments.each do |comment| %>
   <div id="<%= dom_id comment %>" class="comment">
-    <p class="comment-author"><%= link_to comment.user.username, comment.user %> <% if Current.user.present? %><% if comment.user_id == Current.user.id %><%= link_to "Edit", [:edit, post, comment] %> <%= button_to "Delete", comment, method: :delete, data: {turbo_confirm: "Confirm Deletion"} %><% end %><% end %></p>
+    <p class="comment-author"><%= link_to "u/" + comment.user.username, comment.user %> <% if Current.user.present? %><% if comment.user_id == Current.user.id %><%= link_to "Edit", [:edit, post, comment] %> <%= button_to "Delete", comment, method: :delete, data: {turbo_confirm: "Confirm Deletion"} %><% end %><% end %></p>
     <p class="comment-body"><%= comment.body %></p>
   </div>
 <% end %>

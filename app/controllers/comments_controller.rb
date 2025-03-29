@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
+  before_action :resume_session
   before_action :set_comment, only: %i[ show edit update destroy ]
+  allow_unauthenticated_access only: %i[ index show ]
 
   # GET /comments or /comments.json
   def index
