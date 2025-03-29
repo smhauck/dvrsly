@@ -1,5 +1,5 @@
 <% content_for :title, "DVRSLY:post.title" %>
-<div><%= link_to "Back", request.referrer %></div>
+<% if request.referrer %><div><%= link_to "Back", request.referrer %></div><% end %>
 
 <div id="<%= dom_id post %>" class="post">
   <p><% if post.diversion.present? %><span class="post-diversion"><%= link_to "d/" + post.diversion.title, post.diversion %>, </span><% end %><%= link_to "u/" + post.user.username, post.user, class: "post-author" %></span></p>
