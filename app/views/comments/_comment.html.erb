@@ -1,8 +1,5 @@
 <div id="<%= dom_id comment %>">
-
-  <p><%= link_to comment.post.title, comment.post %></p>
+  <p><%= link_to "p/" + comment.post.title, comment.post %></p>
   <p><%= comment.body %></p>
-
-  <p><%= link_to comment.user.username, comment.user %></p>
-
+  <p><%= link_to "u/" + comment.user.username, comment.user %></p>
 </div>
