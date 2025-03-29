@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<%= link_to "Post in Diversion", new_diversion_post_path(@diversion) %>
+<% if Current.user %><%= link_to "Post in Diversion", new_diversion_post_path(@diversion) %><% end %>
 
 <%= render @diversion %>
 
