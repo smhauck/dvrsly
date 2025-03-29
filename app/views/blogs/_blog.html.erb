@@ -1,5 +1,5 @@
 <div id="<%= dom_id blog %>" class="blog">
-  <p><span class="blog-title"><%= link_to sanitize(blog.title), blog %></span> <span class="blog-author"><%= link_to "(u/" + blog.user.username + ")" %></span> <% if Current.user.present? %><% if blog.user_id == Current.user.id %><%= link_to "Edit", [:edit, blog] %> <%= button_to "Delete", blog, method: :delete, data: {turbo_confirm: "Confirm Deletion"} %><% end %><% end %></p>
+  <p><span class="blog-title"><%= link_to "b/" + sanitize(blog.title), blog %></span> <span class="blog-author"><%= link_to "(u/" + blog.user.username + ")" %></span> <% if Current.user.present? %><% if blog.user_id == Current.user.id %><%= link_to "Edit", [:edit, blog] %> <%= button_to "Delete", blog, method: :delete, data: {turbo_confirm: "Confirm Deletion"} %><% end %><% end %></p>
 
   <p class="blog-description"><%= simple_format(blog.description) %></p>
 
