@@ -11,4 +11,4 @@
   <% end %>
 </div>
 
-<%= link_to "New diversion", new_diversion_path %>
+<% if Current.user %><%= link_to "New diversion", new_diversion_path %><% end %>
