@@ -42,7 +42,13 @@ class PostsController < ApplicationController
     if params[:blog_id]
       @blog = Blog.find_by_id(params[:blog_id])
       if @blog.user_id == Current.user.id
+        @authorized = true
+      end
+    else
+        @authorized = true
+    end
 
+    if @authorized
         @post = Post.new(post_params)
         @post.user_id = Current.user.id
         @post.diversion_id = params[:diversion_id]
@@ -60,7 +66,6 @@ class PostsController < ApplicationController
         else
           redirect_to blog_path(params[:blog_id]), alert: "You can only post to your own blog."
       end
-    end
   end
 
   # PATCH/PUT /posts/1 or /posts/1.json
