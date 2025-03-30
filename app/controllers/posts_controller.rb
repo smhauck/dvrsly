@@ -38,18 +38,27 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @post = Post.new(post_params)
-    @post.user_id = Current.user.id
-    @post.diversion_id = params[:diversion_id]
-    @post.blog_id = params[:blog_id]
 
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: "Post was successfully created." }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+    if params[:blog_id]
+      @blog = Blog.find_by_id(params[:blog_id])
+      if @blog.user_id == Current.user.id
+
+        @post = Post.new(post_params)
+        @post.user_id = Current.user.id
+        @post.diversion_id = params[:diversion_id]
+        @post.blog_id = params[:blog_id]
+    
+        respond_to do |format|
+          if @post.save
+            format.html { redirect_to @post, notice: "Post was successfully created." }
+            format.json { render :show, status: :created, location: @post }
+          else
+            format.html { render :new, status: :unprocessable_entity }
+            format.json { render json: @post.errors, status: :unprocessable_entity }
+          end
+        end
+        else
+          redirect_to blog_path(params[:blog_id]), alert: "You can only post to your own blog."
       end
     end
   end
