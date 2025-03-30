@@ -3,7 +3,8 @@
 <div>
   <% if Current.user %>
     <% if Current.user.id == @post.user_id %>
-      <%= button_to "Edit Post", edit_post_path(@post), method: :get %> <%= button_to "Delete Post", @post, method: :delete %>
+      <%= button_to "Edit Post", edit_post_path(@post), method: :get %>
+      <%= button_to "Delete Post", @post, method: :delete, data: {turbo_confirm: "Confirm Deletion"} %>
     <% end %>
   <% end %>
   <% if Current.user %><%= link_to "Comment on Post", new_post_comment_path(@post) %><% end %>

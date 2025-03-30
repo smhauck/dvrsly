@@ -88,10 +88,25 @@ class PostsController < ApplicationController
   # DELETE /posts/1 or /posts/1.json
   def destroy
     if @post.user_id == Current.user.id
-      @post.destroy!
-      respond_to do |format|
-        format.html { redirect_to posts_path, status: :see_other, notice: "Post was successfully destroyed." }
-        format.json { head :no_content }
+      if @post.comments.present?
+        @post.title = "Deleted by User"
+        @post.body = "Deleted by User"
+        @post.user_id = 1
+        respond_to do |format|
+          if @post.save
+            format.html { redirect_to @post, notice: "Post was successfully deleted." }
+            format.json { render :show, status: :ok, location: @post }
+          else
+            format.html { redirect_to @post, alert: :unprocessable_entity }
+            format.json { render json: @post.errors, status: :unprocessable_entity }
+          end
+        end
+      else
+        @post.destroy!
+        respond_to do |format|
+          format.html { redirect_to posts_path, status: :see_other, notice: "Post was successfully destroyed." }
+          format.json { head :no_content }
+        end
       end
     else
       redirect_to @post, notice: "You can only delete your own posts."
