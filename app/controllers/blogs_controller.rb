@@ -44,14 +44,18 @@ class BlogsController < ApplicationController
 
   # PATCH/PUT /blogs/1 or /blogs/1.json
   def update
-    respond_to do |format|
-      if @blog.update(blog_params)
-        format.html { redirect_to @blog, notice: "Blog was successfully updated." }
-        format.json { render :show, status: :ok, location: @blog }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
+    if @blog.user_id == Current.user.id
+      respond_to do |format|
+        if @blog.update(blog_params)
+          format.html { redirect_to @blog, notice: "Blog was successfully updated." }
+          format.json { render :show, status: :ok, location: @blog }
+        else
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @blog.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to @blog, notice: "You can only edit your own blogs."
     end
   end
 

@@ -17,7 +17,8 @@ Rails.application.routes.draw do
 
   resources :comments, path: "/c", only: [:show, :destroy]
 
-  resources :users, path: "/u", only: [:index, :show] do
+  # resources :users, path: "/u", only: [:index, :show] do
+  resources :users, path: "/u" do
     resources :blogs, path: "b", only: [:index, :show]
     resources :comments, path: "c", only: [:index, :show]
     resources :posts, path: "p", only: [:index, :show]

@@ -1,6 +1,8 @@
 <% content_for :title, "DVRSLY" %>
 <h1><%= @user.username %></h1>
-
-<%= link_to "Blogs", user_blogs_path(@user) %>
-<%= link_to "Posts", user_posts_path(@user) %>
-<%= link_to "Comments", user_comments_path(@user) %>
+<div class="user_about"><h2>About</h2><%= sanitize @user.about %></div>
+<div class="user_links">
+<span class="user_link_left"><%= link_to "Blogs", user_blogs_path(@user) %></span>
+<span class="user_link_middle"><%= link_to "Posts", user_posts_path(@user) %></span>
+<span class="user_link_right"><%= link_to "Comments", user_comments_path(@user) %></span>
+</div>

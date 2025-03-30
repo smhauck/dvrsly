@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ blogs comments posts profile show ]
+  before_action :set_user, only: %i[ blogs comments edit posts profile show update ]
   allow_unauthenticated_access only: %i[ index show ]
 
   def blogs
@@ -7,6 +7,9 @@ class UsersController < ApplicationController
   end
 
   def comments
+  end
+
+  def edit
   end
 
   def index
@@ -23,6 +26,22 @@ class UsersController < ApplicationController
   def show
   end
 
+  def update
+    if @blog.user_id == Current.user.id
+      respond_to do |format|
+        if @user.update(user_params)
+          format.html { redirect_to @user, notice: "User was successfully updated." }
+          format.json { render :show, status: :ok, location: @user }
+        else
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      redirect_to @blog, notice: "You can only delete your own blogs."
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -31,6 +50,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.expect(user: [ :username ])
+      params.expect(user: [ :username, :about ])
     end
 end
