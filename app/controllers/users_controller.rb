@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @blog.user_id == Current.user.id
+    if @user.id == Current.user.id
       respond_to do |format|
         if @user.update(user_params)
           format.html { redirect_to @user, notice: "User was successfully updated." }
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
         end
       end
     else
-      redirect_to @blog, notice: "You can only delete your own blogs."
+      redirect_to @user, notice: "You can only update your own account."
     end
   end
 
