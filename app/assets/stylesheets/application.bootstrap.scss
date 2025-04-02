@@ -32,10 +32,10 @@ body { font-size: 100%; }
 .blog { border: 1px solid black; border-radius: 10px; 
   & .posts { border: 1px dotted grey; border-radius: 10px; }
   & .posts-author { font-size: 1em; padding-left: 5px; }
-  & .posts-body { font-size: 1em; padding-left: 5px; }
+  & .posts-content { font-size: 1em; padding-left: 5px; }
   & .comment { border: 1px dotted grey; border-radius: 10px; }
   & .comment-author { font-size: 1em; padding-left: 5px; }
-  & .comment-body { font-size: 1em; padding-left: 5px; }
+  & .comment-content { font-size: 1em; padding-left: 5px; }
 }
 
 .blog-author { font-size: 1em; padding-left: 5px; }
@@ -46,13 +46,13 @@ body { font-size: 100%; }
 .diversion{ border: 1px solid black; border-radius: 10px; 
   & .post { border: 1px dotted grey; border-radius: 10px; }
   & .post-author { font-size: 1em; padding-left: 5px; }
-  & .post-body { font-size: 1em; padding-left: 5px; }
+  & .post-content { font-size: 1em; padding-left: 5px; }
 }
 
 
 .comment { border: 1px solid grey; border-radius: 10px; }
 .comment-author { font-size: 1em; padding-left: 5px; }
-.comment-body { font-size: 1em; padding-left: 5px; }
+.comment-content { font-size: 1em; padding-left: 5px; }
 
 footer { bottom: 0; margin-top: 50px; }
 
@@ -66,12 +66,12 @@ footer { bottom: 0; margin-top: 50px; }
 .post { border: 1px solid black; border-radius: 10px; 
   & .comment { border: 1px dotted grey; border-radius: 10px; }
   & .comment-author { font-size: 1em; padding-left: 5px; }
-  & .comment-body { font-size: 1em; padding-left: 5px; }
+  & .comment-content { font-size: 1em; padding-left: 5px; }
 }
 
 .post-diversion { font-size: 1em; padding-left: 5px; }
 .post-author { font-size: 1em; padding-left: 5px; }
-.post-body { font-size: 1em; padding-left: 5px; }
+.post-content { font-size: 1em; padding-left: 5px; }
 .post-title { font-size: 1.5em; padding-left: 5px; }
 
 .user_link_left { margin-right: 5px; }

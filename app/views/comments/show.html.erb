@@ -5,6 +5,6 @@
 <% if Current.user %>
 <div>
   <%= link_to "Edit this comment", [:edit, @comment.post, @comment] %> |
-  <%= button_to "Destroy this comment", @comment, method: :delete %>
+  <%= link_to "Destroy this comment", @comment, data: { turbo_method: :delete } %>
 </div>
 <% end %>

@@ -4,13 +4,13 @@
 <div id="<%= dom_id post %>" class="post">
   <p><% if post.diversion.present? %><span class="post-diversion"><%= link_to "d/" + post.diversion.title, post.diversion %>, </span><% end %><%= link_to "u/" + post.user.username, post.user, class: "post-author" %></span></p>
   <p class="post-title"><%= sanitize post.title %></p>
-  <div class="post-body"><%= post.content %></div>
+  <div class="post-content"><%= post.content %></div>
 
 
 <% post.comments.each do |comment| %>
   <div id="<%= dom_id comment %>" class="comment">
-    <p class="comment-author"><%= link_to "u/" + comment.user.username, comment.user %> <% if Current.user.present? %><% if comment.user_id == Current.user.id %><%= link_to "Edit", [:edit, post, comment] %> <%= button_to "Delete", comment, method: :delete, data: {turbo_confirm: "Confirm Deletion"} %><% end %><% end %></p>
-    <p class="comment-body"><%= comment.body %></p>
+    <p class="comment-author"><%= link_to "u/" + comment.user.username, comment.user %> <% if Current.user.present? %><% if comment.user_id == Current.user.id %><%= link_to "Edit", [:edit, post, comment] %> <%= link_to "Delete", comment, data: {turbo_method: :delete, turbo_confirm: "Confirm Deletion"} %><% end %><% end %></p>
+    <p class="comment-content"><%= comment.content %></p>
   </div>
 <% end %>
 </div>

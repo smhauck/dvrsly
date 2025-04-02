@@ -1,5 +1,5 @@
-<div id="<%= dom_id comment %>">
-  <p><%= link_to "p/" + comment.post.title, comment.post %></p>
-  <p><%= comment.body %></p>
-  <p><%= link_to "u/" + comment.user.username, comment.user %></p>
+<div class="comment" id="<%= dom_id comment %>">
+  <p><span class="post-title"><%= link_to "p/" + comment.post.title, comment.post %><span class="post-author"><%= link_to comment.post.user.username, comment.post.user %></span></p>
+  <p class="comment-author"><%= link_to "u/" + comment.user.username, comment.user %> <% if Current.user.present? %><% if comment.user_id == Current.user.id %><%= link_to "Edit Comment", [:edit, comment.post, comment] %> <%= link_to "Delete", comment, method: :delete, data: {turbo_confirm: "Confirm Deletion"} %><% end %><% end %></p>
+  <p><%= comment.content %></p>
 </div>

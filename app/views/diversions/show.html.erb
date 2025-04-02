@@ -6,8 +6,8 @@
 
 <% if Current.user %>
 <div>
-  <%= link_to "Edit this diversion", edit_diversion_path(@diversion) %> |
   <%= link_to "Back to diversions", diversions_path %>
-  <%= button_to "Destroy this diversion", @diversion, method: :delete %>
+  <%= link_to "Edit this diversion", edit_diversion_path(@diversion) %> |
+  <%= link_to "Destroy this diversion", @diversion, data: {turbo_method: :delete, turbo_confirm: "Confirm Deletion"} %>
 </div>
 <% end %>
