@@ -5,6 +5,7 @@
   <p><% if post.diversion.present? %><span class="post-diversion"><%= link_to "d/" + post.diversion.title, post.diversion %>, </span><% end %><%= link_to "u/" + post.user.username, post.user, class: "post-author" %></span></p>
   <p class="post-title"><%= sanitize post.title %></p>
   <div class="post-body"><%= simple_format(post.body, {}, { sanitize_options: { tags: %w[a code img pre blockquote ul ol li br], attributes: %w[href src target] } }) %></div>
+  <div class="post-body"><%= post.content %></div>
 
 
 <% post.comments.each do |comment| %>

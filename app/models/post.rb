@@ -5,4 +5,5 @@ class Post < ApplicationRecord
   belongs_to :diversion, optional: true
   belongs_to :blog, optional: true
   has_many :comments
+  has_rich_text :content
 end
