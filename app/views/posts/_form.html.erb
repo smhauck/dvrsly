@@ -17,15 +17,10 @@
       <%= form.text_field :title, autofocus: true %>
     </div>
   
-    <div>
-      <%= form.label :body, style: "display: block" %>
-      <%= form.textarea :body %>
+    <div class="field">
+      <%= form.label :content %>
+      <%= form.rich_textarea :content %>
     </div>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.rich_textarea :content %>
-  </div>
   
     <div>
       <%= form.submit %>
