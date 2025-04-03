@@ -6,6 +6,7 @@ class BlogsController < ApplicationController
   # GET /blogs or /blogs.json
   def index
     if params[:user_id]
+      @user = User.find_by_id(params[:user_id])
       @pagy, @blogs = pagy(User.find_by_id(params[:user_id]).blogs)
     else
       @pagy, @blogs = pagy(Blog.all)

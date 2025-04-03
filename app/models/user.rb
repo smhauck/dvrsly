@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :blogs
   has_many :posts
   has_many :comments
+  has_rich_text :content
 
   validates :username, presence: true, uniqueness: true
   validates :username, exclusion: { message: "Prohibited username", in: ->(user) { user.prohibited_usernames } }

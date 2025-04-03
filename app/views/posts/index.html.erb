@@ -1,4 +1,8 @@
-<% content_for :title, "DVRSLY" %>
+<% if @user %>
+  <% content_for :title, "u/" + @user.username + "/Posts" %>
+<% else %>
+  <% content_for :title, "Posts" %>
+<% end %>
 <%= pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
 <div id="posts">
   <% @posts.each do |post| %>

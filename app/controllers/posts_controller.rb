@@ -10,6 +10,7 @@ class PostsController < ApplicationController
     elsif params[:blog_id]
       @pagy, @posts = pagy(Blog.find_by_id(params[:blog_id]).posts.order(created_at: :desc))
     elsif params[:user_id]
+      @user = User.find_by_id(params[:user_id])
       @pagy, @posts = pagy(User.find_by_id(params[:user_id]).posts.order(created_at: :desc))
     else
       @pagy, @posts = pagy(Post.all.order(created_at: :desc))

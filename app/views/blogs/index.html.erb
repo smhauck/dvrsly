@@ -1,4 +1,9 @@
+<% if @user %>
+<% content_for :title, "u/" + @user.username + "/Blogs" %>
+<% else %>
+<h1>NO</h1>
 <% content_for :title, "Blogs" %>
+<% end %>
 <p style="color: green"><%= notice %></p>
 
 <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
