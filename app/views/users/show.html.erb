@@ -3,7 +3,11 @@
   <div class="username"><%= @user.username %></div>
   <div class="user-about">
     <%= @user.content %>
-    <%= link_to "Edit", edit_user_path(@user) %>
+    <% if Current.user.present? %>
+      <% if Current.user.id == @user.id %>
+        <%= link_to "Edit", edit_user_path(@user) %>
+      <% end %>
+    <% end %>
   </div>
   <div class="user-links">
   <span class="user-link-left"><%= link_to "Blogs", user_blogs_path(@user) %></span>

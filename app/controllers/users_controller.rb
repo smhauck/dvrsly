@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :resume_session
   before_action :set_user, only: %i[ blogs comments edit posts profile show update ]
   allow_unauthenticated_access only: %i[ index show ]
 
