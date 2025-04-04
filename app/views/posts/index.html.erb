@@ -12,7 +12,7 @@
         <span class="post-author"><%= link_to "u/" + post.user.username, post.user %></span>
         <% if post.diversion.present? %><span class="post-diversion"><%= link_to "d/" + post.diversion.title, post.diversion %></span><% end %>
       </p>
-      <div class="post-body"><%= post.content %></div>
+      <div class="post-content"><%= post.content %></div>
     </div>
   <% end %>
 </div>
