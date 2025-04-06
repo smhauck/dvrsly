@@ -44,6 +44,9 @@ class PagesController < ApplicationController
     @pages = Page.all
   end
 
+  def license
+  end
+
   def new
     @page = Page.new
   end
