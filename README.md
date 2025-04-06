@@ -1,24 +1,19 @@
-# README
+# **DVRSLY**
+**Live Life Diversely**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Built by Shannon
 
-Things you may want to cover:
+## Requirements
+* Ruby version 3.4.1
+* Rails version 8.0.2
 
-* Ruby version
+## Deployment instructions
+* First Deployment: kamal setup
+* Subsequent Deployments: kamal deploy
 
-* System dependencies
 
-* Configuration
+# Author and Copyright
+DVRSLY is created and copyright by [Shannon M. Hauck](https://github.com/smhauck)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# License
+DVRSLY is released under the GNU Affero General Public License.  See the [LICENSE](LICENSE) file for details.
