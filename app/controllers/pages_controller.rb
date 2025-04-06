@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  allow_unauthenticated_access only: %i[ about faq index privacy roadmap show terms ]
+  allow_unauthenticated_access only: %i[ about changelog faq index license privacy roadmap show terms ]
   before_action :resume_session
   before_action :set_page, only: %i[ edit update destroy ]
 
