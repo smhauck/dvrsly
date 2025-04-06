@@ -1,4 +1,4 @@
-<% content_for :title, "DVRSLY:post.title" %>
+<% content_for :title, "p/" + post.title %>
 <% if request.referrer %><div><%= link_to "Back", request.referrer %></div><% end %>
 
 <div id="<%= dom_id post %>" class="post">
