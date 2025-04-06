@@ -30,9 +30,9 @@ body { font-size: 100%; }
 }
 
 .blog { border: 1px solid black; border-radius: 10px; 
-  & .posts { border: 1px dotted grey; border-radius: 10px; }
-  & .posts-author { font-size: 1em; padding-left: 5px; }
-  & .posts-content { font-size: 1em; padding-left: 5px; }
+  & .post { border: 1px dotted grey; border-radius: 10px; }
+  & .post-author { font-size: 1em; padding-left: 5px; }
+  & .post-content { font-size: 1em; padding-left: 5px; }
   & .comment { border: 1px dotted grey; border-radius: 10px; }
   & .comment-author { font-size: 1em; padding-left: 5px; }
   & .comment-content { font-size: 1em; padding-left: 5px; }
@@ -70,6 +70,7 @@ footer { bottom: 0; margin-top: 50px; }
 }
 
 .post-diversion { font-size: 1em; padding-left: 5px; }
+.post-blog { font-size: 1em; padding-left: 5px; }
 .post-author { font-size: 1em; padding-left: 5px; }
 .post-content { font-size: 1em; padding-left: 5px; }
 .post-title { font-size: 1.5em; padding-left: 5px; }

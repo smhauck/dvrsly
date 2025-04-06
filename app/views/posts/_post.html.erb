@@ -2,7 +2,11 @@
 <% if request.referrer %><div><%= link_to "Back", request.referrer %></div><% end %>
 
 <div id="<%= dom_id post %>" class="post">
-  <p><% if post.diversion.present? %><span class="post-diversion"><%= link_to "d/" + post.diversion.title, post.diversion %>, </span><% end %><%= link_to "u/" + post.user.username, post.user, class: "post-author" %></span></p>
+  <p>
+    <% if post.diversion.present? %><span class="post-diversion"><%= link_to "d/" + post.diversion.title, post.diversion %>, </span><% end %>
+    <% if post.blog.present? %><span class="post-blog"><%= link_to "b/" + post.blog.title, post.blog %>, </span><% end %>
+    <%= link_to "u/" + post.user.username, post.user, class: "post-author" %></span>
+  </p>
   <p class="post-title"><%= sanitize post.title %></p>
   <div class="post-content"><%= post.content %></div>
 
