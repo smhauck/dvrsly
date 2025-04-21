@@ -69,11 +69,11 @@
   transition: 0.3s;
 }
 
-.blog { border: 1px solid black; border-radius: 10px; 
-  & .post { border: 1px dotted grey; border-radius: 10px; }
+.blog {
+  & .post { }
   & .post-author { font-size: 1em; padding-left: 5px; }
   & .post-content { font-size: 1em; padding-left: 5px; }
-  & .comment { border: 1px dotted grey; border-radius: 10px; }
+  & .comment { }
   & .comment-author { font-size: 1em; padding-left: 5px; }
   & .comment-content { font-size: 1em; padding-left: 5px; }
 }
@@ -83,14 +83,14 @@
 .blog-description { font-size: 1em; padding-left: 5px; }
 .blog-title { font-size: 1.5em; padding-left: 5px; }
 
-.diversion{ border: 1px solid black; border-radius: 10px; 
-  & .post { border: 1px dotted grey; border-radius: 10px; }
+.diversion{
+  & .post { }
   & .post-author { font-size: 1em; padding-left: 5px; }
   & .post-content { font-size: 1em; padding-left: 5px; }
 }
 
 
-.comment { border: 1px solid grey; border-radius: 10px; }
+.comment { }
 .comment-author { font-size: 1em; padding-left: 5px; }
 .comment-content { font-size: 1em; padding-left: 5px; }
 
@@ -104,8 +104,8 @@ footer { margin-top: 50px; width: 100%; background-color: #eee; }
 
 .main { background-color: #ff0; left-margin: 10%; }
 
-.post { border: 1px solid black; border-radius: 10px; 
-  & .comment { border: 1px dotted grey; border-radius: 10px; }
+.post {
+  & .comment { }
   & .comment-author { font-size: 1em; padding-left: 5px; }
   & .comment-content { font-size: 1em; padding-left: 5px; }
 }
@@ -117,7 +117,13 @@ footer { margin-top: 50px; width: 100%; background-color: #eee; }
 .post-title { font-size: 1.5em; padding-left: 5px; }
 
 .username { font-size: 2em; }
-.user-about { border: 1px solid black; font-size: 1em; }
+.user-about { }
 .user-link-left { margin-right: 5px; }
 .user-link-middle { margin-left: 5px; margin-right: 5px; }
 .user-link-right { margin-left: 5px; }
+
+
+
+trix-toolbar .trix-button-group button {
+  background-color: ivory;
+}

@@ -1,6 +1,6 @@
 <% content_for :title, "DVRSLY:diversion.title" %>
 
-<div id="<%= dom_id diversion %>" class="diversion">
+<div id="<%= dom_id diversion %>" class="box diversion">
   <p class="diversion-title"><%= link_to "d/" + sanitize(diversion.title), diversion %></p>
   <p class="diversion-description"><%= simple_format(diversion.description) %></p>
 

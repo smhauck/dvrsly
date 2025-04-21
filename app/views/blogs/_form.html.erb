@@ -12,16 +12,24 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title, autofocus: true, placeholder: "Create a Title" %>
+  <div class="field">
+    <%= form.label :title, class: "label" %>
+  <div class="control">
+    <%= form.text_field :title, autofocus: true, placeholder: "Create a Title", class: "input" %>
+  </div>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.textarea :description, placeholder: "Max length 500 characters", maxlength: 500 %>
+  <div class="field">
+    <%= form.label :description, class: "label" %>
+  <div class="control">
+    <%= form.textarea :description, placeholder: "Max length 500 characters", maxlength: 500, class: "textarea" %>
+  </div>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="field">
+  <div class="control">
+    <%= form.submit "Submit", class: "button is-link" %>
+  </div>
   </div>
 <% end %>

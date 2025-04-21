@@ -12,18 +12,24 @@
       </div>
     <% end %>
   
-    <div>
-      <%= form.label :title, style: "display: block" %>
-      <%= form.text_field :title, autofocus: true %>
+    <div class="field">
+      <%= form.label :title, class: "label" %>
+    <div class="control">
+      <%= form.text_field :title, autofocus: true, class: "input" %>
+    </div>
     </div>
   
     <div class="field">
       <%= form.label :content %>
-      <%= form.rich_textarea :content %>
+    <div class="control">
+      <%= form.rich_textarea :content, class: "textarea" %>
+    </div>
     </div>
   
-    <div>
-      <%= form.submit %>
+    <div class="field">
+    <div class="control">
+      <%= form.submit "Submit", class: "button is-link" %>
+    </div>
     </div>
   <% end %>
 <% elsif @in_blog %>
@@ -41,19 +47,25 @@
       </div>
     <% end %>
   
-    <div>
-      <%= form.label :title, style: "display: block" %>
-      <%= form.text_field :title, autofocus: true %>
+    <div class="field">
+      <%= form.label :title, class: "label" %>
+    <div class="control">
+      <%= form.text_field :title, autofocus: true, class: "input" %>
+    </div>
     </div>
   
   <div class="field">
-    <%= form.label :content %>
-    <%= form.rich_textarea :content %>
+    <%= form.label :content, class: "label" %>
+    <div class="control">
+    <%= form.rich_textarea :content, class: "textarea" %>
+  </div>
   </div>
   
   
-    <div>
-      <%= form.submit %>
+    <div class="field">
+    <div class="control">
+      <%= form.submit "Submit", class: "button is-link" %>
+    </div>
     </div>
   <% end %>
 <% else %>
@@ -70,16 +82,25 @@
       </div>
     <% end %>
   
-    <div>
-      <%= form.label :title, style: "display: block" %>
-      <%= form.text_field :title, autofocus: true %>
+    <div class="field">
+      <%= form.label :title, class: "label" %>
+    <div class="control">
+      <%= form.text_field :title, autofocus: true, class: "input" %>
+    </div>
     </div>
   
   <div class="field">
-    <%= form.label :content %>
-    <%= form.rich_textarea :content %>
+    <%= form.label :content, class: "label" %>
+    <div class="control">
+    <%= form.rich_textarea :content, class: "textarea" %>
+  </div>
   </div>
   
+    <div class="field">
+    <div class="control">
+      <%= form.submit "Submit", class: "button is-link" %>
+    </div>
+    </div>
   
     <div>
       <%= form.submit %>
