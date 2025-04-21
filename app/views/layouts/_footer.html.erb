@@ -1,19 +1,22 @@
-<footer>
-  <div class="container-fluid">
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p class="slogan">Live Life Diversely</p>
     <p>
       <%= link_to "About", page_path('about') %>
+      <%= link_to "About", about_path %>
       : <%= link_to "FAQ", page_path('faq') %>
+      : <%= link_to "Guide", page_path('guide') %>
       : <%= link_to "Roadmap", page_path('roadmap')%>
       : <%= link_to "Changelog", page_path('changelog')%>
       : <%= link_to "Terms", page_path('terms') %>
       : <%= link_to "Privacy", page_path('privacy') %>
       : <%= link_to "Source Code", 'https://github.com/smhauck/dvrsly', target: "_blank" %> & <%= link_to "License", page_path('license') %>
     </p>
-    <p>
-      <span class="copyright">&copy; 2025 DVRSLY.com</span> <span class="slogan">Live Life Diversely</span> <span class="builtby">Built by Shannon</span>
-    </p>
-    <p>
-      <span class="poweredby"><a href="https://www.digitalocean.com/?refcode=e263e59bd933&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%203.svg" alt="DigitalOcean Referral Badge" /></a></span>
-    </p>
+    <p class="copyright">&copy; DVRSLY.com</p>
+<!--
+    <p class="poweredby"><a href="https://www.digitalocean.com/?refcode=e263e59bd933&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%203.svg" alt="DigitalOcean Referral Badge" /></a></p>
+-->
+    <p class="builtby">Built by <%= link_to 'Shannon', 'https://github.com/smhauck', target: '_blank' %></p>
   </div>
 </footer>
+

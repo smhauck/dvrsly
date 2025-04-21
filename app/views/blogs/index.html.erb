@@ -8,7 +8,7 @@
 <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
 <div id="blogs">
   <% @blogs.each do |blog| %>
-    <div id="<%= dom_id blog %>" class="blog">
+    <div id="<%= dom_id blog %>" class="blog box">
       <p>
         <span class="blog-title"><%= link_to "b/" + sanitize(blog.title), blog %></span>
         <span class="blog-author"><%= link_to "u/" + blog.user.username, blog.user %></span>

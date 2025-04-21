@@ -40,6 +40,9 @@ class PagesController < ApplicationController
   def faq
   end
 
+  def guide
+  end
+
   def index
     @pages = Page.all
   end
