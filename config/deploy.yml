@@ -7,7 +7,8 @@ image: smhauck/dvrsly
 # Deploy to these servers.
 servers:
   web:
-    - 159.89.246.81
+    - 5.161.195.221
+    # - 159.89.246.81
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -63,7 +64,8 @@ aliases:
 # Use a persistent storage volume for sqlite database files and local Active Storage files.
 # Recommended to change this to a mounted volume path that is backed up off server.
 volumes:
-  - "/storage:/rails/storage"
+  # - "/storage:/rails/storage"
+  - "/storage_dvrsly:/rails/storage"
 
 
 
