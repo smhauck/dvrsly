@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="light"> <!-- added 'data-theme="light" to temporarily disable darkmode -->
   <head>
     <title><%= content_for(:title) || "Dvrsly" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -26,14 +26,12 @@
 
   <body>
     <div class="container is-fluid">
-    <div class="content">
-    <%= render 'layouts/navbar' %>
-      <%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
-      <%= tag.div(flash[:message], style: "color:orange") if flash[:message] %>
-      <%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+        <%= render 'layouts/navbar' %>
+        <%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
+        <%= tag.div(flash[:message], style: "color:orange") if flash[:message] %>
+        <%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
         <%= yield %>
-    <%= render 'layouts/footer' %>
-    </div>
+        <%= render 'layouts/footer' %>
     </div>
   </body>
 </html>
