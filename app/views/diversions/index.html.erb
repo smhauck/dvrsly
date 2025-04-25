@@ -2,15 +2,13 @@
 
 <% content_for :title, "Diversions" %>
 
-<div><%= link_to "Back", request.referrer %></div>
-<h1>Diversions</h1>
-
-<div id="diversions">
-  <% @diversions.each do |diversion| %>
-  <div class="box diversion">
-    <%= render diversion %>
-  </div>
-  <% end %>
-</div>
+<h2>Diversions</h2>
 
 <% if Current.user %><%= link_to "New diversion", new_diversion_path %><% end %>
+
+  <div class="box diversion">
+  <% @diversions.each do |diversion| %>
+    <%= render diversion %>
+  <% end %>
+  </div>
+
