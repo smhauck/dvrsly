@@ -6,6 +6,7 @@ Built by Shannon
 ## Requirements
 * Ruby version 3.4.1
 * Rails version 8.0.2
+* SQLite3
 
 ## Deployment instructions
 * First Deployment: kamal setup
