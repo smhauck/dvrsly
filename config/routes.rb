@@ -47,12 +47,14 @@ Rails.application.routes.draw do
   get "roadmap" => "pages#roadmap"
   get "terms" =>"pages#terms"
 
+  get "login" => "sessions#new"
+
   resources :pages
 
   # Pages stored in database. /pages/page.title shows the page from the db
 #  get "doc/:link", to: "pages#show", as: :doc
 
-
+  get "/registrations/confirmation/:id", to: "registrations#confirmation"
 
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
