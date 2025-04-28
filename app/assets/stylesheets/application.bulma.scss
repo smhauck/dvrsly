@@ -41,34 +41,6 @@
 
 
 
-
-
-
-
-/* broke */
-.leftsidenav {
-  height: 100%; /* 100% Full-height */
-  width: 10%; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  /* z-index: 1; */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #f99; 
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* broke */
-.leftsidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
 .blog {
   & .post { }
   & .post-author { font-size: 1em; padding-left: 5px; }

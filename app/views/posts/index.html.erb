@@ -13,7 +13,7 @@
         <% if post.diversion.present? %><span class="post-diversion"><%= link_to "d/" + post.diversion.title, post.diversion %></span><% end %>
         <% if post.blog.present? %><span class="post-blog"><%= link_to "b/" + post.blog.title, post.blog %></span><% end %>
       </p>
-      <div class="post-content"><%= post.content %></div>
+      <div class="post-content"><%= post.content.to_plain_text.truncate(250) %></div>
     </div>
   <% end %>
 </div>
