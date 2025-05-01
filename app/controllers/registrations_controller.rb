@@ -9,28 +9,6 @@ class RegistrationsController < ApplicationController
 
   def confirmation
 
-    @confirmation_token = params[:id]
-    puts "CONFIRMATION TOKEN: "
-    puts @confirmation_token
-    puts "END"
-
-
-    # grab the user.id and confirmation_token
-
-    @confirmation_token[/\d\d\d(\d+)-(.*)/]
-    @uid = $1
-    @token = $2
-
-      puts "==============================================================================="
-      puts "==============================================================================="
-      puts "UID: "
-      puts @uid
-      puts "TOKEN: "
-      puts @token
-      puts "==============================================================================="
-      puts "==============================================================================="
-
-   
     # look up the user then confirm the token matches
     @user = User.where("id =?", @uid).first
     if @user.present?
