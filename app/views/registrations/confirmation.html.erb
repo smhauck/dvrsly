@@ -1,3 +1,29 @@
-<h1>Confirmation</h1>
+<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
+<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+<%= tag.div(flash[:message], style: "color:red") if flash[:message] %>
 
-<p>Confirmation Token: <%= @confirmation_token %></p>
+<%= form_with url: registrations_confirmation_path do |form| %>
+  <div class="field">
+  <div class="control">
+  <%= form.email_field :email_address, required: true, autocomplete: "email_address", autofocus: true, placeholder: "Enter your email address", value: params[:email_address], class: "input" %><br>
+  </div>
+  </div>
+  <div class="field">
+  <div class="control">
+  <%= form.text_field :confirmation_token, required: true, placeholder: "Confirmation Token", value: params[:confirmation_token], class: "input" %><br>
+  </div>
+  </div>
+  <div class="field">
+  <div class="control">
+  <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72, class: "input" %><br>
+  </div>
+  </div>
+  <div class="field">
+  <div class="control">
+  <%= form.submit "Confirm Email", class: "button is-link" %>
+  </div>
+  </div>
+<% end %>
+<br>
+
+<%= link_to "Forgot password?", new_password_path %>
