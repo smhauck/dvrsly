@@ -4,7 +4,7 @@
 <%= form_with url: session_path do |form| %>
   <div class="field">
   <div class="control">
-  <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address], class: "input" %><br>
+  <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "email_address", placeholder: "Enter your email address", value: params[:email_address], class: "input" %><br>
   </div>
   </div>
   <div class="field">
