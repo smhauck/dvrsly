@@ -28,6 +28,7 @@ Revenge porn is removed and reported.
 
 
 
+Then you can use the onclick='toggleDark(this);' handler to process the switch
 
 
 

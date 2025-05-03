@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="light"> <!-- added 'data-theme="light" to temporarily disable darkmode -->
+<html>
   <head>
     <title><%= content_for(:title) || "Dvrsly" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -22,6 +22,8 @@
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+
   </head>
 
   <body>

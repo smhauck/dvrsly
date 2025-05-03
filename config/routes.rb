@@ -55,6 +55,8 @@ Rails.application.routes.draw do
 #  get "doc/:link", to: "pages#show", as: :doc
 
   get "/registrations/confirmation", to: "registrations#confirmation"
+  post "/registrations/confirm", to: "registrations#confirm"
+
 
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

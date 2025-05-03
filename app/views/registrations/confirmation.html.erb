@@ -2,7 +2,7 @@
 <%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
 <%= tag.div(flash[:message], style: "color:red") if flash[:message] %>
 
-<%= form_with url: registrations_confirmation_path do |form| %>
+<%= form_with url: registrations_confirm_path do |form| %>
   <div class="field">
   <div class="control">
   <%= form.email_field :email_address, required: true, autocomplete: "email_address", autofocus: true, placeholder: "Enter your email address", value: params[:email_address], class: "input" %><br>
