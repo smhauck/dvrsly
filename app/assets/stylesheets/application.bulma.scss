@@ -87,23 +87,23 @@
 [data-theme=pinkie],
 .theme-pinkie {
 
-   html { background-color: hsla(320 100% 80% / 0.5); color: #000; }
-   body { background-color: hsla(320 100% 80% / 0.5); color: #000; }
-   
-   a:link, a:visited { color: hsl(320 100% 45%); }
-   a:hover { color: #fff; }
+  html { background-color: hsla(320 100% 80% / 0.5); color: #000; }
+  body { background-color: hsla(320 100% 80% / 0.5); color: #000; }
+  
+  a:link, a:visited { color: hsl(320 100% 45%); }
+  a:hover { color: #fff; }
 
-   --bulma-body-background-color: hsla(320 100% 80% / 0.5);
+  --bulma-body-background-color: hsla(320 100% 80% / 0.5);
 
-   .box {
+  .box {
     --bulma-box-background-color: hsla(320 100% 80% / 0.5);
     --bulma-box-color: #000;
-   }
+  }
 
-   .content {
-     --bulma-box-background-color: hsla(320 100% 80% / 0.5);
-     --bulma-content-heading-color: hsl(0 0% 0%);
-   }
+  .content {
+    --bulma-box-background-color: hsla(320 100% 80% / 0.5);
+    --bulma-content-heading-color: hsl(0 0% 0%);
+  }
 
   .navbar {
     --bulma-navbar-h: 360;
@@ -170,18 +170,68 @@
 }
 
 // =======================================================
-[data-theme=unionred],
-.theme-unionred {
-   html { background-color: hsl(360 100% 100%); color: #000; }
-   body { background-color: hsl(360 100% 100%); color: #000; }
+[data-theme=unionreddark],
+.theme-unionreddark {
+  html { background-color: hsl(0 0% 0%); color: #f00; }
+  body { background-color: hsl(0 0% 0%); color: #f00; }
    
-   a:link, a:visited { color: hsl(320 100% 45%); }
-   a:hover { color: #fff; }
+
+  color: #f00;
+  a:link, a:visited { color: #f00; }
+  a:hover { color: #fff; }
+
+  --bulma-body-background-color: hsl(0 0% 0%);
+
+  .box {
+    --bulma-box-background-color: hsl(0 0% 0%);
+    --bulma-box-color: hsl(360 100% 50%);
+  }
+
+
+  .content {
+    --bulma-box-background-color: hsl(0 0% 0%);
+    --bulma-content-heading-color: hsl(360 100% 50%);
+  }
+
+  .navbar {
+    --bulma-navbar-background-color: hsl(0 0% 0%);
+    --bulma-navbar-h: 0;
+    --bulma-navbar-s: 100%;
+    --bulma-navbar-item-color-l: 50%;
+    --bulma-navbar-item-selected-l: 5%;
+    --bulma-navbar-item-selected-background-l: 63%;
+  }
+  .footer {
+    --bulma-footer-background-color: hsl(0 0% 0%);
+  }
+  .slogan { color: #f00; font-weight: 900; margin-right: 75px; }
+}
+
+// =======================================================
+[data-theme=unionredlight],
+.theme-unionredlight {
+  html { background-color: hsl(360 100% 100%); color: #f00; }
+  body { background-color: hsl(360 100% 100%); color: #f00; }
 
   color: #000;
-  a:link, a:hover, a:visited { color: #f00; }
+  a:link, a:visited { color: #f00; }
+  a:hover { color: #fff; }
+
+  .input { background-color: hsl(360 100% 100%); color: hsl(360 100% 50%); }
 
   --bulma-body-background-color: hsl(360 100% 100%);
+  --bulma-input-background-l: hsl(360 100% 100%);
+  --bulma-label-color: hsl(360 100% 50%);
+
+  .box {
+    --bulma-box-background-color: hsl(360 100% 100%);
+    --bulma-box-color: hsl(0 0% 0%);
+  }
+
+  .content {
+    --bulma-box-background-color: hsl(0 0% 0%);
+    --bulma-content-heading-color: hsl(360 100% 50%);
+  }
 
   .navbar {
     --bulma-navbar-background-color: hsl(360 100% 100%);
@@ -195,27 +245,17 @@
     --bulma-footer-background-color: hsl(360 100% 100%);
   }
   .slogan { color: #f00; font-weight: 900; margin-right: 75px; }
+
+  trix-editor {
+    background-color: #fff;
+  }
 }
 
 // =======================================================
 @media (prefers-color-scheme: unionred) {
   :root {
-    // --bulma-body-background-color: hsl(50 100% 50%);
   }
-  .navbar {
-    --bulma-navbar-h: 0;
-    --bulma-navbar-s: 100%;
-    --bulma-navbar-item-color-l: 50%;
-    --bulma-navbar-item-selected-l: 5%;
-    --bulma-navbar-item-selected-background-l: 63%;
-  }
-  .footer {
-    --bulma-footer-background-color: hsl(0 100% 100%);
-  }
-  .slogan { color: #f00; font-weight: 900; margin-right: 75px; }
 }
-
-
 
 // =======================================================
 .blog {
