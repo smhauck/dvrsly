@@ -39,47 +39,54 @@
 @import 'bulma/bulma';
 
 // =======================================================
-@media (prefers-color-scheme: hardboiled) {
-  :root {
-   html { background-color: hsl(60 95% 45%); }
-   body { background-color: hsl(60 95% 45%); }
-   --bulma-body-background-color: hsl(60 95% 45%);
-  }
-  .navbar {
-    --bulma-navbar-h: 0;
-    --bulma-navbar-s: 100%;
-    --bulma-navbar-item-color-l: 50%;
-    --bulma-navbar-item-selected-l: 5%;
-    --bulma-navbar-item-selected-background-l: 63%;
-    --bulma-navbar-background-color: hsl(60 95% 45%);
-
-  }
-  .footer {
-    --bulma-footer-background-color: hsl(60 95% 45%);
-    --bulma-footer-color: hsl(0 360% 50%);
-  }
-}
-
-
-// =======================================================
 [data-theme=hardboiled],
 .theme-harboiled {
 
-   html { background-color: hsl(60 95% 45%); }
-   body { background-color: hsl(60 95% 45%); }
-   --bulma-body-background-color: hsl(60 95% 45%);
+  // 60 95% 45% = greenish yellow
+
+  html { background-color: hsl(360 100% 100%); color: #000; }
+  body { background-color: hsl(360 100% 100%); color: #000; }
+
+  color: #000;
+  a:link, a:visited { color: #000; }
+  a:hover { color: #f00; }
+
+  .input { background-color: hsl(360 100% 100%); color: hsl(360 100% 50%); }
+
+  --bulma-body-background-color: hsl(360 100% 100%);
+  --bulma-input-background-l: hsl(360 100% 100%);
+  --bulma-label-color: hsl(360 100% 50%);
+
+  .box {
+    --bulma-box-background-color: hsl(60 95% 45%);
+    --bulma-box-color: hsl(0 0% 0%);
+  }
+
+  .content {
+    --bulma-box-background-color: hsl(60 95% 45%);
+    --bulma-content-heading-color: hsl(0 0% 0%);
+  }
+
   .navbar {
+    --bulma-navbar-background-color: hsl(60 95% 45%);
     --bulma-navbar-h: 0;
     --bulma-navbar-s: 100%;
     --bulma-navbar-item-color-l: 50%;
     --bulma-navbar-item-selected-l: 5%;
     --bulma-navbar-item-selected-background-l: 63%;
-    --bulma-navbar-background-color: hsl(60 95% 45%);
-
   }
+
+  .post { background-color: hsl(60 95% 45%); }
+
   .footer {
-    --bulma-footer-background-color: hsl(60 95% 45%);
-    --bulma-footer-color: hsl(0 360% 50%);
+    --bulma-footer-background-color: hsl(360 100% 100%);
+  }
+  .slogan { color: #f00; font-weight: 900; margin-right: 75px; }
+
+  .trix-content pre { color: hsl(0 0% 0%); }
+
+  trix-editor {
+    background-color: #fff;
   }
 }
 
