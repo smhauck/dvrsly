@@ -41,8 +41,8 @@
 // =======================================================
 @media (prefers-color-scheme: hardboiled) {
   :root {
-   html { background-color: hsl(60,95%,45%); }
-   body { background-color: hsl(60,95%,45%); }
+   html { background-color: hsl(60 95% 45%); }
+   body { background-color: hsl(60 95% 45%); }
    --bulma-body-background-color: hsl(60 95% 45%);
   }
   .navbar {
@@ -51,7 +51,7 @@
     --bulma-navbar-item-color-l: 50%;
     --bulma-navbar-item-selected-l: 5%;
     --bulma-navbar-item-selected-background-l: 63%;
-    --bulma-navbar-background-color: hsl(60,95%,45%);
+    --bulma-navbar-background-color: hsl(60 95% 45%);
 
   }
   .footer {
@@ -65,8 +65,8 @@
 [data-theme=hardboiled],
 .theme-harboiled {
 
-   html { background-color: hsl(60,95%,45%); }
-   body { background-color: hsl(60,95%,45%); }
+   html { background-color: hsl(60 95% 45%); }
+   body { background-color: hsl(60 95% 45%); }
    --bulma-body-background-color: hsl(60 95% 45%);
   .navbar {
     --bulma-navbar-h: 0;
@@ -74,7 +74,7 @@
     --bulma-navbar-item-color-l: 50%;
     --bulma-navbar-item-selected-l: 5%;
     --bulma-navbar-item-selected-background-l: 63%;
-    --bulma-navbar-background-color: hsl(60,95%,45%);
+    --bulma-navbar-background-color: hsl(60 95% 45%);
 
   }
   .footer {
@@ -94,21 +94,28 @@
    a:hover { color: #fff; }
 
    --bulma-body-background-color: hsla(320 100% 80% / 0.5);
+
    .box {
     --bulma-box-background-color: hsla(320 100% 80% / 0.5);
     --bulma-box-color: #000;
    }
+
    .content {
      --bulma-box-background-color: hsla(320 100% 80% / 0.5);
+     --bulma-content-heading-color: hsl(0 0% 0%);
    }
+
   .navbar {
     --bulma-navbar-h: 360;
     --bulma-navbar-s: 100%;
     --bulma-navbar-item-color-l: 100%;
     --bulma-navbar-item-selected-l: 5%;
     --bulma-navbar-item-selected-background-l: 63%;
-    --bulma-navbar-background-color: hsl(320,100%,45%);
+    --bulma-navbar-background-color: hsl(320 100% 45%);
   }
+
+  .navbar-brand .navbar-item { color: #fff; }
+
   trix-editor {
     background-color: #fff;
   }
@@ -122,35 +129,62 @@
 // =======================================================
 @media (prefers-color-scheme: pinkie) {
   :root {
-    html { background-color: hsla(320 100% 45% / 0.5) }
-    body { background-color: hsla(320 100% 45% / 0.5) }
-    --bulma-body-background-color: hsla(320 100% 45% / 0.5)
-    a:link, a:hover, a:visited { color: #f00; }
+     html { background-color: hsla(320 100% 80% / 0.5); color: #000; }
+     body { background-color: hsla(320 100% 80% / 0.5); color: #000; }
+     
+     a:link, a:visited { color: hsl(320 100% 45%); }
+     a:hover { color: #fff; }
+  
+     --bulma-body-background-color: hsla(320 100% 80% / 0.5);
+  
+     .box {
+      --bulma-box-background-color: hsla(320 100% 80% / 0.5);
+      --bulma-box-color: #000;
+     }
+  
+     .content {
+       --bulma-box-background-color: hsla(320 100% 80% / 0.5);
+       --bulma-content-heading-color: hsl(0 0% 0%);
+     }
+  
+    .navbar {
+      --bulma-navbar-h: 360;
+      --bulma-navbar-s: 100%;
+      --bulma-navbar-item-color-l: 100%;
+      --bulma-navbar-item-selected-l: 5%;
+      --bulma-navbar-item-selected-background-l: 63%;
+      --bulma-navbar-background-color: hsl(320 100% 45%);
+    }
+  
+    .navbar-brand .navbar-item { color: #fff; }
+  
+    trix-editor {
+      background-color: #fff;
+    }
+    .footer {
+      --bulma-footer-background-color: hsla(320 100% 80% / 0.0);
+      // --bulma-footer-color: hsla(320 100% 80% / 0.5);
+    }
+    .slogan { color: #000; font-weight: 900; margin-right: 75px; }
   }
-  .navbar {
-    --bulma-navbar-h: 360;
-    --bulma-navbar-s: 100%;
-    --bulma-navbar-item-color-l: 100%;
-    --bulma-navbar-item-selected-l: 5%;
-    --bulma-navbar-item-selected-background-l: 63%;
-    --bulma-navbar-background-color: hsl(320,100%,45%);
-
-  }
-  .footer {
-    --bulma-footer-background-color: hsl(60 95% 45%);
-    --bulma-footer-color: hsl(0 360% 50%);
-  }
-  .slogan { color: #f00; font-weight: 900; margin-right: 75px; }
 }
 
 // =======================================================
 [data-theme=unionred],
 .theme-unionred {
-  color: #f00;
+   html { background-color: hsl(360 100% 100%); color: #000; }
+   body { background-color: hsl(360 100% 100%); color: #000; }
+   
+   a:link, a:visited { color: hsl(320 100% 45%); }
+   a:hover { color: #fff; }
+
+  color: #000;
   a:link, a:hover, a:visited { color: #f00; }
 
-  // --bulma-body-background-color: hsl(360 100% 90%);
+  --bulma-body-background-color: hsl(360 100% 100%);
+
   .navbar {
+    --bulma-navbar-background-color: hsl(360 100% 100%);
     --bulma-navbar-h: 0;
     --bulma-navbar-s: 100%;
     --bulma-navbar-item-color-l: 50%;
@@ -158,7 +192,7 @@
     --bulma-navbar-item-selected-background-l: 63%;
   }
   .footer {
-    --bulma-footer-background-color: hsl(0 100% 100%);
+    --bulma-footer-background-color: hsl(360 100% 100%);
   }
   .slogan { color: #f00; font-weight: 900; margin-right: 75px; }
 }

@@ -2,7 +2,7 @@
   <div class="content has-text-centered">
    <p> 
     <span class="slogan">Live Life Diversely</span>
-    <span class="builtby"><%= link_to 'Built by Shannon', 'https://github.com/smhauck', target: '_blank' %></span>
+    <span class="builtby"><%= link_to('https://github.com/smhauck', target: '_blank') do %>&copy; & Built by Shannon<% end %></span>
     </p>
     <p>
       <%= link_to "About", about_path %>
@@ -15,7 +15,6 @@
       : <%= link_to "License", page_path('license') %>
       : <%= link_to "Source Code", 'https://github.com/smhauck/dvrsly', target: "_blank" %> 
     </p>
-    <p class="copyright">&copy; DVRSLY.com</p>
   </div>
 </footer>
 
