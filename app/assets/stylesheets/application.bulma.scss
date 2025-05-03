@@ -126,6 +126,7 @@
   trix-editor {
     background-color: #fff;
   }
+  .trix-content pre { background-color: hsl(320 100% 80%); color: hsl(0 0% 0%); }
   .footer {
     --bulma-footer-background-color: hsla(320 100% 80% / 0.0);
     // --bulma-footer-color: hsla(320 100% 80% / 0.5);
@@ -168,6 +169,7 @@
   .footer {
     --bulma-footer-background-color: hsl(0 0% 0%);
   }
+  .trix-content pre { background-color: hsl(0 0% 20%); color: hsl(360 100% 50%); }
   .slogan { color: #f00; font-weight: 900; margin-right: 75px; }
 }
 
@@ -213,6 +215,7 @@
   trix-editor {
     background-color: #fff;
   }
+  .trix-content pre { color: hsl(360 100% 50%); }
 }
 
 // =======================================================
