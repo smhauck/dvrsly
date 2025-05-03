@@ -134,49 +134,6 @@
 }
 
 // =======================================================
-@media (prefers-color-scheme: pinkie) {
-  :root {
-     html { background-color: hsla(320 100% 80% / 0.5); color: #000; }
-     body { background-color: hsla(320 100% 80% / 0.5); color: #000; }
-     
-     a:link, a:visited { color: hsl(320 100% 45%); }
-     a:hover { color: #fff; }
-  
-     --bulma-body-background-color: hsla(320 100% 80% / 0.5);
-  
-     .box {
-      --bulma-box-background-color: hsla(320 100% 80% / 0.5);
-      --bulma-box-color: #000;
-     }
-  
-     .content {
-       --bulma-box-background-color: hsla(320 100% 80% / 0.5);
-       --bulma-content-heading-color: hsl(0 0% 0%);
-     }
-  
-    .navbar {
-      --bulma-navbar-h: 360;
-      --bulma-navbar-s: 100%;
-      --bulma-navbar-item-color-l: 100%;
-      --bulma-navbar-item-selected-l: 5%;
-      --bulma-navbar-item-selected-background-l: 63%;
-      --bulma-navbar-background-color: hsl(320 100% 45%);
-    }
-  
-    .navbar-brand .navbar-item { color: #fff; }
-  
-    trix-editor {
-      background-color: #fff;
-    }
-    .footer {
-      --bulma-footer-background-color: hsla(320 100% 80% / 0.0);
-      // --bulma-footer-color: hsla(320 100% 80% / 0.5);
-    }
-    .slogan { color: #000; font-weight: 900; margin-right: 75px; }
-  }
-}
-
-// =======================================================
 [data-theme=unionreddark],
 .theme-unionreddark {
   html { background-color: hsl(0 0% 0%); color: #f00; }
@@ -255,12 +212,6 @@
 
   trix-editor {
     background-color: #fff;
-  }
-}
-
-// =======================================================
-@media (prefers-color-scheme: unionred) {
-  :root {
   }
 }
 
