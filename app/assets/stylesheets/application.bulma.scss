@@ -96,9 +96,6 @@
 
   html { background-color: hsla(320 100% 80% / 0.5); color: #000; }
   body { background-color: hsla(320 100% 80% / 0.5); color: #000; }
-  
-  a:link, a:visited { color: hsl(320 100% 45%); }
-  a:hover { color: #fff; }
 
   --bulma-body-background-color: hsla(320 100% 80% / 0.5);
 
@@ -121,7 +118,8 @@
     --bulma-navbar-background-color: hsl(320 100% 45%);
   }
 
-  .navbar a:link, a:visited { color: hsl(360 100% 100%); }
+  .navbar a:link { color: hsl(360 100% 100%); }
+  .navbar a:visited { color: hsl(360 100% 100%); }
   .navbar a:hover { color: hsl(0 0% 0%); }
 
   .navbar-brand .navbar-item { color: #fff; }
@@ -135,6 +133,10 @@
     // --bulma-footer-color: hsla(320 100% 80% / 0.5);
   }
   .slogan { color: #000; font-weight: 900; margin-right: 75px; }
+
+  a:link, a:visited { color: hsl(320 100% 45%); }
+  a:hover { color: #fff; }
+
 }
 
 // =======================================================
