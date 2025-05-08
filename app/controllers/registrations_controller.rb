@@ -7,58 +7,23 @@ class RegistrationsController < ApplicationController
     redirect_to root_url if authenticated?
   end
 
-  def confirmation
-  end
-
-  def confirm
-puts "#####################################################"
-puts "#####################################################"
-puts "DEF CONFIRM"
-puts "#####################################################"
-    if user = User.authenticate_by(params.permit(:email_address, :password))
-puts "user = user.authenticate_by"
-puts "#####################################################"
-puts "#####################################################"
-      if user.confirmation_token == params.permit(:confirmation_token)
-puts "user.confirmation_token == params confirmation token"
-puts "#####################################################"
-        user.confirmed = true
-        if user.save
-          start_new_session_for user
-          redirect_to root_url
-        else
-          redirect_to root_url, alert: "Not Saved: Invalid Confirmation Token"
-        end
-      else
-        redirect_to root_url, alert: "Invalid Confirmation Token"
-      end
-    else
-      redirect_to root_url, alert: "Please check your email address and password"
-puts "#####################################################"
-puts "#####################################################"
-puts "user not authenticated by params"
-puts "#####################################################"
-puts "#####################################################"
-    end
-
-  end
-
   def create
+    # check if email_address exists
+    #   if not, create user with random password
+    # send password reset email
+    # end
 
-    user = User.new(params.permit(:email_address, :username, :password))
-    user.confirmation_token = SecureRandom.hex(15)
-    user.confirmation_sent_at = Time.current
-
-    if user.save
-      UserMailer.with(user: user).sign_up_confirmation_email.deliver_now
-
-      redirect_to after_authentication_url, notice: "Successfully Signed Up"
+    if user = User.find_by(email_address: params[:email_address])
+      PasswordsMailer.reset(user).deliver_later
     else
-      # redirect_to root_path, alert: "Try another email address or password."
-      print "ALERT ALERT ALERT ALERT ALERT ALERT ALERT ALERT = "
-      puts alert
-      # redirect_to root_path, alert: "Try another email address or password."
-      redirect_to root_path, alert: "prohibited username"
+      rand_pass = SecureRandom.hex(25)
+      user = User.new(email_address: params[:email_address], username: params[:username], password: :rand_pass.to_s, password_confirmation: :rand_pass.to_s)
+      if user.save
+        PasswordsMailer.reset(user).deliver_later
+        redirect_to root_path, notice: "Check your email for confirmation link to create a password"
+      else
+        redirect_to new_registration_path, alert: "User did not save"
+      end
     end
   end
 
