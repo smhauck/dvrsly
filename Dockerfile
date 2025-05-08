@@ -34,7 +34,8 @@ RUN apt-get update -qq && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Install sendmail
-RUN apt-get update && apt-get install sendmail
+RUN apt-get update && apt-get install -y sendmail
+
 
 # Install JavaScript dependencies
 ARG NODE_VERSION=22.12.0
