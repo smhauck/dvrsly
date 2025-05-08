@@ -114,9 +114,15 @@
     --bulma-navbar-s: 100%;
     --bulma-navbar-item-color-l: 100%;
 //    --bulma-navbar-item-selected-l: 5%;
-    --bulma-navbar-item-selected-background-l: 63%;
     --bulma-navbar-background-color: hsl(320 100% 45%);
+    --bulma-navbar-dropdown-item-background-l: 20%;
+    --bulma-navbar-dropdown-item-color-l: 90%;
+
+    --bulma-navbar-item-background-l-delta: 42%;
+    --bulma-navbar-item-selected-background-l: 63%;
   }
+
+  .navbar-dropdown { background-color: hsl(320 100% 45%); }
 
   .navbar a:link { color: hsl(360 100% 100%); }
   .navbar a:visited { color: hsl(360 100% 100%); }
