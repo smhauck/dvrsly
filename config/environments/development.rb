@@ -55,6 +55,10 @@ Rails.application.configure do
 
 
 
+  config.log_level = :debug
+
+
+
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
