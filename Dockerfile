@@ -19,6 +19,8 @@ WORKDIR /rails
 
 # Install Postfix
 RUN apt-get update && apt-get install -y postfix
+RUN mkfifo /var/spool/postfix/public/pickup
+
 
 # Install base packages
 RUN apt-get update -qq && \
