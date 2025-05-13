@@ -15,7 +15,10 @@ FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
 WORKDIR /rails
 
 # Install sendmail
-RUN apt-get update && apt-get install -y sendmail
+# RUN apt-get update && apt-get install -y sendmail
+
+# Install Postfix
+RUN apt-get update && apt-get install -y postfix
 
 # Install base packages
 RUN apt-get update -qq && \
