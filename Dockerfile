@@ -67,8 +67,6 @@ RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
 RUN rm -rf node_modules
 
-# Localhost
-RUN echo "localhost localhost.localdomain" >> /etc/hosts
 
 
 # Final stage for app image
@@ -91,3 +89,6 @@ ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 # Start server via Thruster by default, this can be overwritten at runtime
 EXPOSE 80
 CMD ["./bin/thrust", "./bin/rails", "server"]
+
+# Localhost
+RUN echo "localhost localhost.localdomain" >> /etc/hosts
