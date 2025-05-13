@@ -35,10 +35,13 @@ Rails.application.configure do
 
   # Log to STDOUT with the current request id as a default log tag.
   config.log_tags = [ :request_id ]
-  config.logger   = ActiveSupport::TaggedLogging.logger(STDOUT)
+  # config.logger   = ActiveSupport::TaggedLogging.logger(STDOUT)
 
-  file_logger = ActiveSupport::Logger.new("/logs/production.log")
-  logger = logger.extend ActiveSupport::Logger.broadcast(file_logger)
+  config.logger   = ActiveSupport::TaggedLogging.logger("log/production.log")
+  
+
+  # file_logger = ActiveSupport::Logger.new("log/production.log")
+  # logger = logger.extend ActiveSupport::Logger.broadcast(file_logger)
 
   # Change to "debug" to log everything (including potentially personally-identifiable information!)
   config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "debug")
