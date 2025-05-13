@@ -17,6 +17,9 @@ WORKDIR /rails
 # Install sendmail
 RUN apt-get update && apt-get install -y sendmail
 
+# Localhost
+RUN echo "localhost localhost.localdomain" >> /etc/hosts
+
 # Install base packages
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y curl default-mysql-client libjemalloc2 libvips && \
@@ -81,8 +84,6 @@ RUN groupadd --system --gid 1000 rails && \
     chown -R rails:rails db log storage tmp
 USER 1000:1000
 
-# Localhost
-RUN echo "localhost localhost.localdomain" >> /etc/hosts
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
