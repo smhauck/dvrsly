@@ -90,5 +90,3 @@ ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 EXPOSE 80
 CMD ["./bin/thrust", "./bin/rails", "server"]
 
-# Localhost
-RUN echo "localhost localhost.localdomain" >> /etc/hosts
