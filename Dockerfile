@@ -17,9 +17,6 @@ WORKDIR /rails
 # Install sendmail
 RUN apt-get update && apt-get install -y sendmail
 
-# Localhost
-RUN echo "localhost localhost.localdomain" >> /etc/hosts
-
 # Install base packages
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y curl default-mysql-client libjemalloc2 libvips && \
@@ -69,6 +66,9 @@ RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
 
 RUN rm -rf node_modules
+
+# Localhost
+RUN echo "localhost localhost.localdomain" >> /etc/hosts
 
 
 # Final stage for app image
