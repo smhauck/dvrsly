@@ -42,15 +42,27 @@ Rails.application.configure do
 
 
 
+# Specify outgoing SMTP server. Remember to add smtp/* credentials via rails credentials:edit.
+config.action_mailer.smtp_settings = {
+  user_name: Rails.application.credentials.dig(:smtp, :user_name),
+  password: Rails.application.credentials.dig(:smtp, :password),
+  address: "smtp.sendgrid.net",
+  port: 587,
+  authentication: :plain
+}
 
-  config.action_mailer.delivery_method = :sendmail
-  config.action_mailer.sendmail_settings = {
-    location: '/usr/sbin/sendmail',
-    arguments: %w[ -i ]
-  }
+
+
+
+
+#  config.action_mailer.delivery_method = :sendmail
+#  config.action_mailer.sendmail_settings = {
+#    location: '/usr/sbin/sendmail',
+#    arguments: %w[ -i ]
+#  }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_options = { from: "no-reply@dvrsly.com" }
+  config.action_mailer.default_options = { from: "info@dvrsly.com" }
 
 
 
