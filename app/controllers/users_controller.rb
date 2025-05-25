@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :resume_session
-  before_action :set_user, only: %i[ blogs comments edit posts profile show update ]
+  before_action :set_user, only: %i[ blogs comments edit posts profile show update destroy ]
   allow_unauthenticated_access only: %i[ index show ]
 
   def blogs
@@ -40,6 +40,18 @@ class UsersController < ApplicationController
       end
     else
       redirect_to @user, notice: "You can only update your own account."
+    end
+  end
+
+  def destroy
+    if @user.id == Current.user.id
+      @user.destroy
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: "User account was successfully deleted." }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to @user, alert: "You can only delete your own account."
     end
   end
 

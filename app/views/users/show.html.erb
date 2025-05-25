@@ -6,6 +6,9 @@
     <% if Current.user.present? %>
       <% if Current.user.id == @user.id %>
         <%= link_to "Edit", edit_user_path(@user) %>
+        <!-- Delete account form -->
+        <%= link_to "Delete Account", @user, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete your account? THIS CANNOT BE UNDONE!"}, class: "button is-danger" %>
+
       <% end %>
     <% end %>
   </div>
