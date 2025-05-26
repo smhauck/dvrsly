@@ -47,6 +47,12 @@
         <%= link_to "Sign Up", new_registration_path, class: "navbar-item" %>
       <% end %>
       <div class="navbar-item">
+        <%= form_with url: search_posts_path, method: :get, local: true do |form| %>
+          <%# form.label :q, "Search Posts:" %>
+          <%= form.text_field :q, placeholder: "Search Posts", value: params[:q] %>
+          <%= form.submit "Search" %>
+        <% end %>
+      </div>
       <div class="navbar-item">
 	<select data-choose-theme class="focus:outline-none h-10 rounded-full px-3 border">
 		<option value="">Choose Theme</option>
@@ -57,14 +63,6 @@
 		<option value="dark">Dark</option>
 		<option value="light">Light</option>
 	</select>
-      </div>
-      <div class="navbar-item">
-        <!-- filepath: app/views/posts/_search_form.html.erb -->
-<%= form_with url: search_posts_path, method: :get, local: true do |form| %>
-  <%= form.label :q, "Search Posts:" %>
-  <%= form.text_field :q, value: params[:q] %>
-  <%= form.submit "Search" %>
-<% end %>
       </div>
     </div>
   </div>
