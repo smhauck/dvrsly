@@ -114,6 +114,18 @@ class PostsController < ApplicationController
     end
   end
 
+def search
+    if params[:q].present?
+      @posts = Post.joins(:action_text_rich_texts).where("title LIKE ? or action_text_rich_texts.body like ?", "%#{params[:q]}%", "%#{params[:q]}%")
+      puts "POSTS FOUND: #{@posts.count}"
+    else
+      @posts = Post.none
+      puts "NO POSTS FOUND"
+    end
+  end
+  
+    
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post

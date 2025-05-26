@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   resources :posts, path: "/p" do
     resources :comments, path: "c", only: [:index, :new, :create, :edit, :update]
+    collection do
+      get :search
+    end
   end
 
   resources :posts, path: "/p", only: [:index, :new, :create, :edit, :show, :update, :destroy]

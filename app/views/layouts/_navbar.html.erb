@@ -58,6 +58,14 @@
 		<option value="light">Light</option>
 	</select>
       </div>
+      <div class="navbar-item">
+        <!-- filepath: app/views/posts/_search_form.html.erb -->
+<%= form_with url: search_posts_path, method: :get, local: true do |form| %>
+  <%= form.label :q, "Search Posts:" %>
+  <%= form.text_field :q, value: params[:q] %>
+  <%= form.submit "Search" %>
+<% end %>
+      </div>
     </div>
   </div>
 </nav>
