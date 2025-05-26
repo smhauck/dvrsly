@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :resume_session
   before_action :set_post, only: %i[ show edit update destroy ]
-  allow_unauthenticated_access only: %i[ index show ]
+  allow_unauthenticated_access only: %i[ index search show ]
 
   # GET /posts or /posts.json
   def index
@@ -116,7 +116,7 @@ class PostsController < ApplicationController
 
 def search
     if params[:q].present?
-      @posts = Post.joins(:action_text_rich_texts).where("title LIKE ? or action_text_rich_texts.body like ?", "%#{params[:q]}%", "%#{params[:q]}%")
+      @posts = Post.joins(:action_text_rich_text).where("title LIKE ? or action_text_rich_texts.body like ?", "%#{params[:q]}%", "%#{params[:q]}%")
       puts "POSTS FOUND: #{@posts.count}"
     else
       @posts = Post.none
